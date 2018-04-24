@@ -5,7 +5,7 @@
         <div class="row">
           <div class="block-web">
             <div class="header">
-              <h3 class="content-header theme_color">&nbsp;Eliminar Cliente</h3>
+              <h3 class="content-header theme_color">&nbsp;Eliminar Partida</h3>
             </div>
             <div class="porlets-content" style="margin-bottom: -50px;">
               <h4>¿Esta segúro que desea eliminar la partida?</h4>
