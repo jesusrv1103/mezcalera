@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 Route::resource('home','HomeController');
 Route::resource('almacenes','AlmacenController');
@@ -21,3 +21,5 @@ Route::resource('direcciones','DireccionController');
 Route::resource('proveedores','ProveedorController');
 Route::resource('usuarios','UsuariosController');
 Route::resource('articulos','ArticulosController');
+
+Route::get('verPartidas/{id}','PartidaController@verPartidas')->name('partidas.verPartidas');

@@ -103,4 +103,12 @@ class PartidaController extends Controller
         $partidas->update();
         return Redirect::to('partidas');
     }
+
+
+    public function verPartidas()
+    {
+        
+        return view('partida.listaPartidas');        
+    }
+
 }
