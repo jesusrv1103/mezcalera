@@ -33,8 +33,10 @@
           </div>
         </div>
         <div class="porlets-content">
-          <form action="{{route('proveedores.store')}}" method="POST" class="form-horizontal row-border"  parsley-validate novalidate>
+          <form action="{{url('proveedores',[$proveedores->id])}}" method="POST" class="form-horizontal row-border"  parsley-validate novalidate>
            {{csrf_field()}}
+
+           <input type="hidden" name="_method" value="PUT">
 
            <div class="form-group">
             <label class="col-sm-3 control-label">Nombre Proveedor<strog class="theme_color">*</strog></label>
