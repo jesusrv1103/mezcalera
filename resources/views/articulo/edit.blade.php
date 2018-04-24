@@ -145,8 +145,9 @@
               <option value="{{$partida->id}}" selected>
                 {{$partida->numeroPartida}}
               </option>
-              else
-              <option value="{{$partida->id}}" selected>
+              @else
+
+              <option value="{{$partida->id}}" >
                 {{$partida->numeroPartida}}
               </option>
               @endif
