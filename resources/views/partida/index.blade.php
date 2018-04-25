@@ -9,7 +9,7 @@
   <div class="pull-right">
     <ol class="breadcrumb">
       <li><a href="?c=Inicio">Inicio</a></li>
-      <li class="active">Partidas</a></li>
+      <li class="active">Partidas y Presupuesto</a></li>
     </ol>
   </div>
 </div>
@@ -21,7 +21,7 @@
           <div class="row" style="margin-top: 15px; margin-bottom: 12px;">
             <div class="col-sm-7">
               <div class="actions"> </div>
-              <h2 class="content-header theme_color" style="margin-top: -5px;">&nbsp;&nbsp;Partidas</h2>
+              <h2 class="content-header theme_color" style="margin-top: -5px;">&nbsp;&nbsp;Partidas y Presupuesto</h2>
             </div>
             <div class="col-md-5">
               <div class="btn-group pull-right">

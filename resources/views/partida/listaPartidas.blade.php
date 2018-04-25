@@ -26,7 +26,6 @@
               <b>
 
                 <div class="btn-group" style="margin-right: 10px;">
-                  <a class="btn btn-sm btn-success tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a>
 
                   <a class="btn btn-sm btn-warning tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descargar Partidas"> <i class="fa fa-download"></i> Descargar </a>
                   <a class="btn btn-sm btn-danger tooltips" href="{{url('/partidas')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cancelar"> <i class="fa fa-times"></i> Salir</a>
@@ -39,7 +38,7 @@
       </div>
       <div class="porlets-content container clear_both padding_fix">
 
-        
+
 
        <div class="col-lg-6"> 
         <section class="panel default blue_title h4">
@@ -55,13 +54,466 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <th>Presuspuesto gastado: </th>
+                  <th>Presuspuesto Gastado: </th>
                   <td></td>
                 </tr>
                 <tr>
                   <th>Diferencia: </th>
                   <td></td>
                 </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar   </a></td>
+                </tr>
+                <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Febrero</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href=""{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Marzo</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Abril</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Mayo</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Junio</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Julio</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Agosto</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Septiembre</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Octubre</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Noviembre</span> 
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-6"> 
+        <section class="panel default blue_title h4">
+          <div class="panel-heading"><span class="semi-bold">Diciembre
+          </div>
+          <div class="panel-body">
+
+            <table class="table table-striped">
+
+              <tbody>
+                <tr>
+                  <th>Presupuesto Asignado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Presuspuesto Gastado: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Diferencia: </th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Registrar: </th>
+                  <td><a class="btn btn-sm btn-success tooltips" href="{{route('partidas2.create')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a></td>
+                </tr>
+                 <tr>
+                  <th>Modificar: </th>
+                  <td><a class="btn btn-primary btn-sm" href="{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Modificar Partida Mensual"> <i class="fa fa-edit"></i> Modificar </a></td>
+                </tr>
+                <tr>
+                  <th>Eliminar: </th>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                </tr>
+
               </tbody>
             </table>
           </div>

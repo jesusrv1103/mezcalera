@@ -80,6 +80,23 @@
          </div><!--/form-group-->
 
           <div class="form-group">
+            <label class="col-sm-3 control-label">Tipo de Usuario:<strog class="theme_color">*</strog></label>
+            <div class="col-sm-6">
+              <select class="form-control" name="" required id="ambito">
+               <option value="Administrador"> 
+                 ADMINISTRADOR          
+               </option>
+                <option value="Almacenista"> 
+                 ALMACENISTA          
+               </option>
+               <option value="UsuarioRegular"> 
+                 USUARIO REGULAR           
+               </option>
+             </select>
+           </div>
+         </div><!--/form-group-->
+
+          <div class="form-group">
         <label class="col-sm-3 control-label">Departamento<strog class="theme_color">*</strog></label>
         <div class="col-sm-6">
           <select name="idDireccion" class="form-control" required>

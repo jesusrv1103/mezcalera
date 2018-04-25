@@ -5,7 +5,12 @@ namespace Almacen\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Almacen\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
+use Almacen\Partidas2;
+use DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Partida2Controller extends Controller
 {
@@ -16,8 +21,10 @@ class Partida2Controller extends Controller
      */
     public function index()
     {
-        //
+         $partida2= DB::table('partidas2')->where('estado','Activo')->get();
+        return view('partidas.index',['partidas2' => $partidas2]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -26,7 +33,7 @@ class Partida2Controller extends Controller
      */
     public function create()
     {
-        //
+         return view('partidas2.create');
     }
 
     /**
@@ -59,7 +66,8 @@ class Partida2Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        return view("partidas2.edit");
     }
 
     /**
