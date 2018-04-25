@@ -60,7 +60,7 @@
                 <td>{{$partida->concepto}}</td>
 
                 <th class="center">
-                <a href="" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
+                <a href="{{URL::action('PartidaController@verPartidas',$partida->id)}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
                 </td>
                 <th class="center">
                   <a href="{{URL::action('PartidaController@edit',$partida->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    

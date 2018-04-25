@@ -3,12 +3,12 @@
 <div class="pull-left breadcrumb_admin clear_both">
   <div class="pull-left page_title theme_color">
     <h1>Inicio</h1>
-    <h2 class="">Lista de Mantenimientos</h2>
+    <h2 class="">Lista de Partidas mensuales</h2>
   </div>
   <div class="pull-right">
     <ol class="breadcrumb">
       <li ><a style="color: #808080" href="{{url('/empleados')}}">Inicio</a></li>
-      <li class="active">Lista de Mantenimientos</a></li>
+      <li class="active">Lista de Partidas mensuales</a></li>
     </ol>
   </div>
 </div>
@@ -20,16 +20,16 @@
           <div class="row" style="margin-top: 15px; margin-bottom: 12px;">
             <div class="col-sm-7">
               <div class="actions"> </div>
-              <h4 class="content-header " style="margin-top: -5px;">&nbsp;&nbsp;<strong></strong></h4>
+              <h4 class="content-header " style="margin-top: -5px;">&nbsp;&nbsp;<strong>{{$partidas->concepto}}</strong></h4>
             </div>
             <div class="btn-group pull-right">
               <b>
 
                 <div class="btn-group" style="margin-right: 10px;">
-                  <a class="btn btn-sm btn-success tooltips" href="{{URL::action('CuentasEmpresasCEPROZACController@create1',$empresas->id)}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nuevo Proveedor"> <i class="fa fa-plus"></i> Registrar </a>
+                  <a class="btn btn-sm btn-success tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Partida Mensual"> <i class="fa fa-plus"></i> Registrar </a>
 
-                  <a class="btn btn-sm btn-warning tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descargar"> <i class="fa fa-download"></i> Descargar </a>
-                  <a class="btn btn-sm btn-danger tooltips" href="{{url('/empresasCEPROZAC')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cancelar"> <i class="fa fa-times"></i> Salir</a>
+                  <a class="btn btn-sm btn-warning tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descargar Partidas"> <i class="fa fa-download"></i> Descargar </a>
+                  <a class="btn btn-sm btn-danger tooltips" href="{{url('/partidas')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cancelar"> <i class="fa fa-times"></i> Salir</a>
                 </div>
               </a>
             </b>
@@ -39,9 +39,11 @@
       </div>
       <div class="porlets-content container clear_both padding_fix">
 
+        
+
        <div class="col-lg-6"> 
         <section class="panel default blue_title h4">
-          <div class="panel-heading"><span class="semi-bold"></span> 
+          <div class="panel-heading"><span class="semi-bold">Enero</span> 
           </div>
           <div class="panel-body">
 
@@ -49,19 +51,15 @@
 
               <tbody>
                 <tr>
-                  <th>Banco: </th>
+                  <th>Presupuesto Asignado: </th>
                   <td></td>
                 </tr>
                 <tr>
-                  <th>Clave Interbancaria: </th>
+                  <th>Presuspuesto gastado: </th>
                   <td></td>
                 </tr>
                 <tr>
-                  <th>Numero de Cuenta: </th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th>Saldo: </th>
+                  <th>Diferencia: </th>
                   <td></td>
                 </tr>
               </tbody>

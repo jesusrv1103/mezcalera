@@ -105,10 +105,14 @@ class PartidaController extends Controller
     }
 
 
-    public function verPartidas()
+    public function verPartidas($id)
     {
-        
-        return view('partida.listaPartidas');        
+        $partidas=Partida::findOrFail($id);
+
+
+    
+
+        return view('partida.listaPartidas',["partidas"=>$partidas]);        
     }
 
 }
