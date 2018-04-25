@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
 use Almacen\Partida;
+use Almacen\Partida2;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -107,12 +108,16 @@ class PartidaController extends Controller
 
     public function verPartidas($id)
     {
+        echo $id;
         $partidas=Partida::findOrFail($id);
+        $idPartida=$partidas->id;
 
-
-    
-
-        return view('partida.listaPartidas',["partidas"=>$partidas]);        
+        $partidasMensuales=DB::table('partidas2')
+        ->join('partidas','partidas2.idPartida','=','partidas.id')
+        ->where('partidas.estado','=','Activo')
+        ->where('idPartida','=',$idPartida)
+        ->get();
+        return view('partida.listaPartidas',["partidas"=>$partidas,"partidasMensuales"=>$partidasMensuales]);        
     }
 
 }

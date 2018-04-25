@@ -14,6 +14,12 @@ class CreatePartidas2Table extends Migration
     {
         Schema::create('partidas2', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idPartida')->unsigned();
+            $table->foreign('idPartida')->references('id')->on('partidas');
+            $table->integer('idMes')->unsigned();
+            $table->foreign('idMes')->references('id')->on('meses');
+            $table->double('presupuestoAsignado');
+            $table->double('presuspuestoGastado');
             $table->timestamps();
         });
     }
