@@ -44,7 +44,7 @@
        @foreach($partidasMensuales as $partidames )
        <div class="col-lg-6"> 
         <section class="panel default blue_title h4">
-          <div class="panel-heading"><span class="semi-bold">{{$partidames->idMes}}</span> 
+          <div class="panel-heading"><span class="semi-bold">{{$partidames->meses}}</span> 
           </div>
           <div class="panel-body">
 
