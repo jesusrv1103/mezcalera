@@ -55,7 +55,7 @@
 
            <label class="col-sm-3 control-label">Dirección: <strog class="theme_color">*</strog></label>
            <div class="col-sm-6">
-            <input name="direccion" id="direccion" onchange="mayus(this);" type="text" required value="" class="form-control" maxlength="90" placeholder="Ingrese Direccion del proveedor"/>
+            <input name="direccion" id="direccion" onchange="mayus(this);" type="text" required value="" class="form-control" maxlength="90" placeholder="Ingrese Dirección del proveedor"/>
           </div>
         </div><!--/form-group-->
 

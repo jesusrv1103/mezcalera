@@ -5,10 +5,10 @@
         <div class="row">
           <div class="block-web">
             <div class="header">
-              <h3 class="content-header theme_color">&nbsp;Eliminar Articuloo</h3>
+              <h3 class="content-header theme_color">&nbsp;Eliminar Artículo</h3>
             </div>
             <div class="porlets-content" style="margin-bottom: -50px;">
-              <h4>¿Esta segúro que desea eliminar el Articulo?</h4>
+              <h4>¿Esta segúro que desea eliminar el Artículo?</h4>
             </div><!--/porlets-content--> 
           </div><!--/block-web--> 
         </div>

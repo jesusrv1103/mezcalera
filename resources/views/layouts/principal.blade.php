@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Almacen SEZAC</title>
+  <title>Almacén SEZAC</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -84,7 +84,7 @@
           <!--\\\\\\\ header top bar start \\\\\\-->
           <a href="javascript:void(0);" class="menutoggle"> <i class="fa fa-bars"></i> </a>
           <div class="top_left_bar">
-            <h1>Control Almacen</h1>
+            <h1>Control Almacén</h1>
           </div>
           <div class="top_right_bar">
             <div style="margin-top: -33%;">

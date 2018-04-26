@@ -10,7 +10,7 @@
     <ol class="breadcrumb">
       <li><a href="?c=Inicio">Inicio</a></li>
       <li><a href="?c=localidad">Almacenes</a></li>
-      <li class="active">Editar Almacen</li>
+      <li class="active">Editar Almacén</li>
     </ol>
   </div>
 </div>
@@ -22,7 +22,7 @@
           <div class="row" style="margin-top: 15px; margin-bottom: 12px;">
             <div class="col-sm-8">
               <div class="actions"> </div>
-              <h2 class="content-header theme_color" style="margin-top: -5px;">Editar almacen</h2>
+              <h2 class="content-header theme_color" style="margin-top: -5px;">Editar almacén</h2>
             </div>
             <div class="col-md-4">
               <div class="btn-group pull-right">
@@ -41,9 +41,9 @@
             <input type="hidden" name="_method" value="PUT">
 
             <div class="form-group">
-              <label class="col-sm-3 control-label">Nombre Almacen<strog class="theme_color">*</strog></label>
+              <label class="col-sm-3 control-label">Nombre Almacén<strog class="theme_color">*</strog></label>
               <div class="col-sm-6">
-               <input onchange="mayus(this);" maxlength="45" name="nombre" class="form-control" required value="{{$almacenes->nombre}}" placeholder="Ingrese el nombre de el Almacen" />
+               <input onchange="mayus(this);" maxlength="45" name="nombre" class="form-control" required value="{{$almacenes->nombre}}" placeholder="Ingrese el nombre de el Almacén" />
              </div>
            </div><!--/form-group-->
 

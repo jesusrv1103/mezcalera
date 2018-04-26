@@ -111,7 +111,7 @@
                 </tr>
                 <tr>
                   <th>Eliminar: </th>
-                  <td><a class="btn btn-danger btn-sm" href=""{{route('partidas2.edit')}}" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
+                  <td><a class="btn btn-danger btn-sm" href="" style="margin-right: 10px;" data-toggle="modal" data-placement="bottom" title="" data-original-title="Eliminar Partida Mensual"> <i class="fa fa-eraser"></i> Eliminar </a></td>
                 </tr>
               </tbody>
             </table>

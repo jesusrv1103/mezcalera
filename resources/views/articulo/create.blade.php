@@ -39,7 +39,7 @@
               <!--este  no esta  agregarlo en todos -->
 
               <div class="form-group">
-                <label class="col-sm-3 control-label">Nombre Articulo<strog class="theme_color">*</strog></label>
+                <label class="col-sm-3 control-label">Nombre Artículo<strog class="theme_color">*</strog></label>
                 <div class="col-sm-6">
 
                  <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="nombre" id="nombre" 
@@ -48,7 +48,7 @@
              </div><!--/form-group-->
              <div class="form-group">
 
-              <label class="col-sm-3 control-label">Cantidad articulo: <strog class="theme_color">*</strog></label>
+              <label class="col-sm-3 control-label">Cantidad artículo: <strog class="theme_color">*</strog></label>
               <div class="col-sm-6">
                <input onkeypress="return soloNumeros(event);" required value="" type="text" class="form-control"  autofocus name="cantidad" maxlength="12" placeholder="Ingrese la cantidad del Articulo">
              </div>
@@ -58,7 +58,7 @@
 
 
            <div class="form-group">
-            <label class="col-sm-3 control-label">Almacen<strog class="theme_color">*</strog></label>
+            <label class="col-sm-3 control-label">Almacén<strog class="theme_color">*</strog></label>
             <div class="col-sm-6">
               <select name="idAlmacen" class="form-control" required>
                 @foreach($almacenes as $almacen)
@@ -105,7 +105,7 @@
         </div><!--/form-group-->
 
         <div class="form-group">
-          <label class="col-sm-3 control-label">Tipo Articulo:<strog class="theme_color">*</strog></label>
+          <label class="col-sm-3 control-label">Tipo Artículo:<strog class="theme_color">*</strog></label>
           <div class="col-sm-6">
             <select class="form-control" name="tipoArticulo" required id="ambito">
               <option value="CONSUMIBLE"> 

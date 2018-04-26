@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>INSEZAC | LOGIN</title>
+  <title>ALMACÉNSEZAC | LOGIN</title>
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -77,8 +77,8 @@
       </div>
 
       <div id="titulo">
-        <center><h2> Bienvenido a <b>Control de Almacen</b></h2></center>
-        <h5 id="intro" align="center">Sistema para el control de Almacen</h5>
+        <center><h2> Bienvenido a <b>Control de Almacén</b></h2></center>
+        <h5 id="intro" align="center">Sistema para el control de Almacén</h5>
 
       </div>
 
