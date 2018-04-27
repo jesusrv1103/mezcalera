@@ -25,3 +25,6 @@ Route::resource('partidas2','Partida2Controller');
 
 
 Route::get('verPartidas/{id}','PartidaController@verPartidas')->name('partidas.verPartidas');
+
+
+Route::get('crearPartidas2/{id}','Partida2Controller@create1')->name('partidas2.create1');
