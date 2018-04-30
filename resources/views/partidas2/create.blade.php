@@ -36,6 +36,14 @@
           <form action="{{route('partidas2.store')}}" method="POST" class="form-horizontal row-border"  parsley-validate novalidate>
            {{csrf_field()}}
 
+<<<<<<< HEAD
+           <div class="form-group">
+            <label class="col-sm-3 control-label">Partida<strog class="theme_color">*</strog></label>
+            <div class="col-sm-6">
+              <select name="idPartida" class="form-control" required>
+                @foreach($partidas as $partida)
+                <option value="{{$partida->id}}">
+                  {{$partida->numeroPartida}}
 
 
            <input type="hidden" name="idPartida" value="{{$partidas->id}}"/>
@@ -55,6 +63,53 @@
           </div><!--/form-group-->
 
 
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Unidad de Medida:<strog class="theme_color">*</strog></label>
+            <div class="col-sm-6">
+              <select class="form-control" name="UnidadMedidad" required id="ambito">
+                <option value="ENERO"> 
+                 ENERO          
+               </option>
+               <option value="FEBRERO"> 
+                 FEBRERO           
+               </option>
+
+               <option value="MARZO"> 
+                 MARZO          
+               </option>
+               <option value="ABRIL"> 
+                 ABRIL          
+               </option>
+               <option value="MAYO"> 
+                 MAYO          
+               </option>
+
+               <option value="JUNIO"> 
+                 JUNIO          
+               </option>
+
+               <option value="JULIO"> 
+                 JULIO          
+               </option>
+
+               <option value="AGOSTO"> 
+                 AGOSTO          
+               </option>
+
+               <option value="SEPTIEMBRE"> 
+                 SEPTIEMBRE          
+               </option>
+
+               <option value="OCTUBRE"> 
+                 OCTUBRE          
+               </option>
+
+               <option value="NOVIEMBRE"> 
+                 NOVIEMBRE          
+               </option>
+
+
+
 
 
           <div class="form-group">    
@@ -64,34 +119,54 @@
                <div class="input-group-addon">$</div>
 
 
+               <option value="DICIEMBRE"> 
+                 DICIEMBRE          
+               </option>
+             </select>
+
                <input name="presupuestoA" maxlength="9" type="text" value="" min="1" max='9999999' step="100" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" required value="" placeholder="Ingresar el Saldo" onkeypress=" return soloNumeros(event);"/>
              </div>
+
            </div>
-         </div>
+         </div><!--/form-group-->
 
          <div class="form-group">    
-          <label class="col-sm-3 control-label">Presupuesto Gastado: <strog class="theme_color">*</strog></label>
+          <label class="col-sm-3 control-label">Presupuesto Asignado: <strog class="theme_color">*</strog></label>
           <div class="col-sm-4">
             <div class="input-group">
              <div class="input-group-addon">$</div>
 
 
+             <input name="sueldo_Fijo" maxlength="9" type="text" value="" min="1" max='9999999' step="100" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" required value="" placeholder="Ingresar el Saldo" onkeypress=" return soloNumeros(event);"/>
              <input name="presupuestoG" maxlength="9" type="text" value="" min="1" max='9999999' step="100" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" required value="" placeholder="Ingresar el Saldo " onkeypress=" return soloNumeros(event);"/>
+
            </div>
          </div>
        </div>
 
+       <div class="form-group">    
+        <label class="col-sm-3 control-label">Presupuesto Gastado: <strog class="theme_color">*</strog></label>
+        <div class="col-sm-4">
+          <div class="input-group">
+           <div class="input-group-addon">$</div>
+
+
+           <input name="sueldo_Fijo" maxlength="9" type="text" value="" min="1" max='9999999' step="100" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" required value="" placeholder="Ingresar el Saldo " onkeypress=" return soloNumeros(event);"/>
+         </div>
+       </div>
+     </div>
 
 
 
-       <div class="form-group">
-        <div class="col-sm-offset-7 col-sm-5">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <a href="{{route('partidas.store')}}" class="btn btn-default"> Cancelar</a>
-        </div>
-      </div><!--/form-group-->
-    </form>
-  </div><!--/porlets-content-->
+
+     <div class="form-group">
+      <div class="col-sm-offset-7 col-sm-5">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{{route('partidas.store')}}" class="btn btn-default"> Cancelar</a>
+      </div>
+    </div><!--/form-group-->
+  </form>
+</div><!--/porlets-content-->
 </div><!--/block-web-->
 </div><!--/col-md-12-->
 </div><!--/row-->

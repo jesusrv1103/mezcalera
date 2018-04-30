@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
 use Almacen\Partidas2;
-use Almacen\Partida;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -22,22 +21,34 @@ class Partida2Controller extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
      $partida2= DB::table('partidas2')->where('estado','Activo')->get();
      return view('partidas.index',['partidas2' => $partidas2]);
    }
 
+=======
+         $partida2= DB::table('partidas2')->where('estado','Activo')->get();
+        return view('partidas.index',['partidas2' => $partidas2]);
+    }
+    
+>>>>>>> 35395b85cb590e36ed3b54be7799edab5dea2040
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create1($id)
+    public function create()
     {
+<<<<<<< HEAD
      $partidas=Partida::findOrFail($id);
      $meses= DB::table('meses')->get(); 
      return view('partidas2.create',['meses' => $meses,'partidas'=>$partidas]);
    }
+=======
+         return view('partidas2.create');
+    }
+>>>>>>> 35395b85cb590e36ed3b54be7799edab5dea2040
 
     /**
      * Store a newly created resource in storage.
@@ -47,6 +58,7 @@ class Partida2Controller extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
      DB::beginTransaction();
 
 
@@ -71,6 +83,15 @@ class Partida2Controller extends Controller
      DB::commit();
      return view('partida.listaPartidas',["partidas"=>$partidas,"partidasMensuales"=>$partidasMensuales]);    
    }
+=======
+        $partidas2= new Partidas2();
+        $partidas2->numeroPartida=$request->get('numeroPartida');
+        $partidas2->concepto=$request->get('concepto');
+        $partidas2->estado='Activo';
+        $partidas2->save();
+        return Redirect::to('partidas');
+    }
+>>>>>>> 35395b85cb590e36ed3b54be7799edab5dea2040
 
     /**
      * Display the specified resource.
@@ -91,9 +112,14 @@ class Partida2Controller extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
       $partidas=Partidas2::findOrFail($id);
       $meses= DB::table('meses')->get(); 
       return view("partidas2.edit",['meses' => $meses,'partidas'=>$partidas]);
+=======
+        
+        return view("partidas2.edit");
+>>>>>>> 35395b85cb590e36ed3b54be7799edab5dea2040
     }
 
     /**
@@ -105,6 +131,7 @@ class Partida2Controller extends Controller
      */
     public function update(Request $request, $id)
     {
+<<<<<<< HEAD
       DB::beginTransaction();
 
       $partidas=Partidas2::findOrFail($id);
@@ -127,6 +154,9 @@ class Partida2Controller extends Controller
 
       DB::commit();
       return view('partida.listaPartidas',["partidas"=>$partidas,"partidasMensuales"=>$partidasMensuales]); 
+=======
+        //
+>>>>>>> 35395b85cb590e36ed3b54be7799edab5dea2040
     }
 
     /**

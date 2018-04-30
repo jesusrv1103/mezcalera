@@ -48,10 +48,10 @@
                 <tr>
                   <th>Nombre</th>
                   <th>Cantidad</th>
-                  <th>Almacen</th>
+                  <th>Almacén</th>
                   <th>Unidad de Medida</th>
                   <th>Fecha Caducidad</th>
-                  <th>Tipo Articulo</th>
+                  <th>Tipo Artículo</th>
                   <th>Partida</th>
 
                   <td><center><b>Editar</b></center></td>
@@ -85,10 +85,10 @@
               <tr>
                <th>Nombre</th>
                <th>Cantidad</th>
-               <th>Almacen</th>
+               <th>Almacén</th>
                <th>Unidad de Medida</th>
                <th>Fecha Caducidad</th>
-               <th>Tipo Articulo</th>
+               <th>Tipo Artículo</th>
                <th>Partida</th>
                <td><center><b>Editar</b></center></td>
                <td><center><b>Borrar</b></center></td>

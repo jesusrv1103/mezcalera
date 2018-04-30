@@ -22,7 +22,7 @@ Route::resource('proveedores','ProveedorController');
 Route::resource('usuarios','UsuariosController');
 Route::resource('articulos','ArticulosController');
 Route::resource('partidas2','Partida2Controller');
-
+Route::resource('reportes','ReporteController');
 
 Route::get('verPartidas/{id}','PartidaController@verPartidas')->name('partidas.verPartidas');
 

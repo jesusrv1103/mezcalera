@@ -8,8 +8,7 @@ use Almacen\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
-use Almacen\Partida;
-use Almacen\Partida2;
+use Almacen\Reporte;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -23,8 +22,7 @@ class PartidaController extends Controller
      */
     public function index()
     {
-        $partidas= DB::table('partidas')->where('estado','Activo')->get();
-        return view('partida.index',['partidas' => $partidas]);
+       return view('reporte.create');
     }
 
     /**
@@ -34,7 +32,7 @@ class PartidaController extends Controller
      */
     public function create()
     {
-        return view('partida.create');
+        return view('reporte.create');
     }
 
     /**
@@ -45,12 +43,7 @@ class PartidaController extends Controller
      */
     public function store(Request $request)
     {
-        $partidas= new Partida();
-        $partidas->numeroPartida=$request->get('numeroPartida');
-        $partidas->concepto=$request->get('concepto');
-        $partidas->estado='Activo';
-        $partidas->save();
-        return Redirect::to('partidas');
+       
     }
 
     /**
@@ -72,7 +65,7 @@ class PartidaController extends Controller
      */
     public function edit($id)
     {
-        return view("partida.edit",["partidas"=>Partida::findOrFail($id)]);
+       
     }
 
     /**
@@ -84,11 +77,7 @@ class PartidaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $partidas=Partida::findOrFail($id);
-        $partidas->numeroPartida=$request->get('numeroPartida');
-        $partidas->concepto=$request->get('concepto');
-        $partidas->update();
-        return Redirect::to('partidas');
+        
     }
 
     /**
@@ -99,27 +88,13 @@ class PartidaController extends Controller
      */
     public function destroy($id)
     {
-        $partidas=Partida::findOrFail($id);
-        $partidas->estado="Inactivo";
-        $partidas->update();
-        return Redirect::to('partidas');
+       
     }
 
 
     public function verPartidas($id)
     {
-      
-        $partidas=Partida::findOrFail($id);
-        $idPartida=$partidas->id;
-
-        $partidasMensuales=DB::table('partidas2')
-        ->join('partidas','partidas2.idPartida','=','partidas.id')
-        ->join('meses','partidas2.idMes','=','meses.id')
-        ->select('partidas2.*','meses.meses')
-        ->where('partidas.estado','=','Activo')
-        ->where('idPartida','=',$idPartida)
-        ->get();
-        return view('partida.listaPartidas',["partidas"=>$partidas,"partidasMensuales"=>$partidasMensuales]);        
+                
     }
 
 }

@@ -9,8 +9,8 @@
   <div class="pull-right">
     <ol class="breadcrumb">
       <li><a href="?c=Inicio">Inicio</a></li>
-      <li><a href="?c=localidad">Articulo</a></li>
-      <li class="active">Editar  Articulo</li>
+      <li><a href="?c=localidad">Artículo</a></li>
+      <li class="active">Editar  Artículo</li>
     </ol>
   </div>
 </div>
@@ -22,7 +22,7 @@
           <div class="row" style="margin-top: 15px; margin-bottom: 12px;">
             <div class="col-sm-8">
               <div class="actions"> </div>
-              <h2 class="content-header theme_color" style="margin-top: -5px;">Editar Articulo</h2>
+              <h2 class="content-header theme_color" style="margin-top: -5px;">Editar Artículo</h2>
             </div>
             <div class="col-md-4">
               <div class="btn-group pull-right">
@@ -40,7 +40,7 @@
               <input type="hidden" name="_method" value="PUT">
 
               <div class="form-group">
-                <label class="col-sm-3 control-label">Nombre Articulo<strog class="theme_color">*</strog></label>
+                <label class="col-sm-3 control-label">Nombre Artículo<strog class="theme_color">*</strog></label>
                 <div class="col-sm-6">
 
                   <input onchange="mayus(this);"  type="text" class="form-control" autofocus name="nombre" id="nombre" 
@@ -57,7 +57,7 @@
 
 
 
-                <label class="col-sm-3 control-label">Cantidad articulo: <strog class="theme_color">*</strog></label>
+                <label class="col-sm-3 control-label">Cantidad artículo: <strog class="theme_color">*</strog></label>
                 <div class="col-sm-6">
                  <input onkeypress="return soloNumeros(event);" type="text" required class="form-control"  autofocus name="cantidad" maxlength="12" placeholder="Ingrese la cantidad del Articulo" value="{{$articulos->cantidad}}">
                </div>
@@ -67,7 +67,7 @@
 
 
              <div class="form-group">
-              <label class="col-sm-3 control-label">Almacen<strog class="theme_color">*</strog></label>
+              <label class="col-sm-3 control-label">Almacén<strog class="theme_color">*</strog></label>
               <div class="col-sm-6">
                 <select name="idAlmacen" class="form-control" required>
                   @foreach($almacenes as $almacen)
@@ -113,7 +113,7 @@
           </div><!--/form-group-->
 
           <div class="form-group">
-            <label class="col-sm-3 control-label">Tipo Articulo:<strog class="theme_color">*</strog></label>
+            <label class="col-sm-3 control-label">Tipo Artículo:<strog class="theme_color">*</strog></label>
             <div class="col-sm-6">
               <select class="form-control" name="tipoArticulo" required >
                 @if($articulos->tipoArticulo=="CONSUMIBLE")
