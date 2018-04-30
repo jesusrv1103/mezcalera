@@ -44,7 +44,12 @@ class Partida2Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $partidas2= new Partidas2();
+        $partidas2->numeroPartida=$request->get('numeroPartida');
+        $partidas2->concepto=$request->get('concepto');
+        $partidas2->estado='Activo';
+        $partidas2->save();
+        return Redirect::to('partidas');
     }
 
     /**

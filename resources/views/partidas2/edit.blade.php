@@ -10,7 +10,7 @@
     <ol class="breadcrumb">
       <li><a href="?c=Inicio">Inicio</a></li>
       <li><a href="?c=localidad">Partidas</a></li>
-      <li class="active">Alta Partida</li>
+      <li class="active">Editar Partida</li>
     </ol>
   </div>
 </div>
@@ -33,17 +33,41 @@
           </div>
         </div>
         <div class="porlets-content">
-          <form action="{{route('partidas2.edit')}}" method="POST" class="form-horizontal row-border"  parsley-validate novalidate>
+          <form action="{{url('partidas2',[$partidas->id])}}" method="POST" class="form-horizontal row-border"   parsley-validate novalidate>
+
            {{csrf_field()}}
 
-           <div class="form-group">    
+           <input type="hidden" name="_method" value="PUT">
+
+
+
+           <input  type ="hidden"  name="idPartida" value="{{$partidas->idPartida}}"/>
+
+           <div class="form-group">
+            <label class="col-sm-3 control-label">Almacen<strog class="theme_color">*</strog></label>
+            <div class="col-sm-4">
+              <select name="idMes" class="form-control" required>
+                @foreach($meses as $mes)
+                <option value="{{$mes->id}}">
+                  {{$mes->meses}}
+                </option>
+                @endforeach
+              </select>
+              <div class="help-block with-errors"></div>
+            </div>
+          </div><!--/form-group-->
+
+
+
+
+          <div class="form-group">    
             <label class="col-sm-3 control-label">Presupuesto Asignado: <strog class="theme_color">*</strog></label>
             <div class="col-sm-4">
               <div class="input-group">
                <div class="input-group-addon">$</div>
 
 
-               <input name="sueldo_Fijo" maxlength="9" type="text" value="" min="1" max='9999999' step="100" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" required value="" placeholder="Ingresar el Saldo" onkeypress=" return soloNumeros(event);"/>
+               <input name="presupuestoA" maxlength="9" type="text" value="{{$partidas->presupuestoAsignado}}" min="1" max='9999999' step="100" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" required value="" placeholder="Ingresar el Saldo" onkeypress=" return soloNumeros(event);"/>
              </div>
            </div>
          </div>
@@ -55,7 +79,7 @@
              <div class="input-group-addon">$</div>
 
 
-             <input name="sueldo_Fijo" maxlength="9" type="text" value="" min="1" max='9999999' step="100" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" required value="" placeholder="Ingresar el Saldo " onkeypress=" return soloNumeros(event);"/>
+             <input name="presupuestoG" maxlength="9" type="text" value="{{$partidas->presupuestoGastado}}" min="1" max='9999999' step="100" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" required value="" placeholder="Ingresar el Saldo " onkeypress=" return soloNumeros(event);"/>
            </div>
          </div>
        </div>

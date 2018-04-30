@@ -19,7 +19,8 @@ class CreatePartidas2Table extends Migration
             $table->integer('idMes')->unsigned();
             $table->foreign('idMes')->references('id')->on('meses');
             $table->double('presupuestoAsignado');
-            $table->double('presuspuestoGastado');
+            $table->double('presupuestoGastado');
+            $table->string('estado');
             $table->timestamps();
         });
     }

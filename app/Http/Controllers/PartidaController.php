@@ -108,7 +108,7 @@ class PartidaController extends Controller
 
     public function verPartidas($id)
     {
-        echo $id;
+      
         $partidas=Partida::findOrFail($id);
         $idPartida=$partidas->id;
 
