@@ -24,7 +24,7 @@ class Partida2Controller extends Controller
     {
      $partida2= DB::table('partidas2')->where('estado','Activo')->get();
      return view('partidas.index',['partidas2' => $partidas2]);
- }
+   }
 
 
     /**
@@ -37,7 +37,7 @@ class Partida2Controller extends Controller
      $partidas=Partida::findOrFail($id);
      $meses= DB::table('meses')->get(); 
      return view('partidas2.create',['meses' => $meses,'partidas'=>$partidas]);
- }
+   }
 
     /**
      * Store a newly created resource in storage.
@@ -47,29 +47,29 @@ class Partida2Controller extends Controller
      */
     public function store(Request $request)
     {
-       DB::beginTransaction();
+     DB::beginTransaction();
 
 
-       $partidas= new Partidas2();
-       $partidas->idPartida=$request->get('idPartida');
-       $partidas->idMes=$request->get('idMes');
-       $partidas->presupuestoAsignado=$request->get('presupuestoA');
-       $partidas->presupuestoGastado=$request->get('presupuestoG');
-       $partidas->save();
-       echo $request->get('idPartida');
-       $idPartida=$partidas->idPartida;
+     $partidas= new Partidas2();
+     $partidas->idPartida=$request->get('idPartida');
+     $partidas->idMes=$request->get('idMes');
+     $partidas->presupuestoAsignado=$request->get('presupuestoA');
+     $partidas->presupuestoGastado=$request->get('presupuestoG');
+     $partidas->save();
+     echo $request->get('idPartida');
+     $idPartida=$partidas->idPartida;
 
-       $partidas=Partida::findOrFail($idPartida);
-       $partidasMensuales=DB::table('partidas2')
-       ->join('partidas','partidas2.idPartida','=','partidas.id')
-       ->join('meses','partidas2.idMes','=','meses.id')
-       ->select('partidas2.*','meses.meses')
-       ->where('partidas.estado','=','Activo')
-       ->where('idPartida','=',$idPartida)
-       ->get();
+     $partidas=Partida::findOrFail($idPartida);
+     $partidasMensuales=DB::table('partidas2')
+     ->join('partidas','partidas2.idPartida','=','partidas.id')
+     ->join('meses','partidas2.idMes','=','meses.id')
+     ->select('partidas2.*','meses.meses')
+     ->where('partidas.estado','=','Activo')
+     ->where('idPartida','=',$idPartida)
+     ->get();
 
-       DB::commit();
-       return view('partida.listaPartidas',["partidas"=>$partidas,"partidasMensuales"=>$partidasMensuales]);    
+     DB::commit();
+     return view('partida.listaPartidas',["partidas"=>$partidas,"partidasMensuales"=>$partidasMensuales]);    
    }
 
     /**
@@ -91,9 +91,9 @@ class Partida2Controller extends Controller
      */
     public function edit($id)
     {
-        $partidas=Partidas2::findOrFail($id);
-        $meses= DB::table('meses')->get(); 
-        return view("partidas2.edit",['meses' => $meses,'partidas'=>$partidas]);
+      $partidas=Partidas2::findOrFail($id);
+      $meses= DB::table('meses')->get(); 
+      return view("partidas2.edit",['meses' => $meses,'partidas'=>$partidas]);
     }
 
     /**
@@ -127,7 +127,7 @@ class Partida2Controller extends Controller
 
       DB::commit();
       return view('partida.listaPartidas',["partidas"=>$partidas,"partidasMensuales"=>$partidasMensuales]); 
-  }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -139,4 +139,4 @@ class Partida2Controller extends Controller
     {
         //
     }
-}
+  }
