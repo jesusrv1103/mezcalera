@@ -1,6 +1,6 @@
 <?php
 
-namespace Almacen\Http\Controllers;
+namespace FullcalendarEvento\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => Almacen\User::class,
+        'model'  => FullcalendarEvento\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

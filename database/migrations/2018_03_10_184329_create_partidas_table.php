@@ -16,6 +16,7 @@ class CreatePartidasTable extends Migration
             $table->increments('id');
             $table->string('numeroPartida');
             $table->string('concepto');
+            $table->string('ano');
             $table->string('estado');
             $table->timestamps();
         });

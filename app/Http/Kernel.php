@@ -1,6 +1,6 @@
 <?php
 
-namespace Almacen\Http;
+namespace FullcalendarEvento\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,11 +13,11 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \Almacen\Http\Middleware\EncryptCookies::class,
+        \FullcalendarEvento\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \Almacen\Http\Middleware\VerifyCsrfToken::class,
+        \FullcalendarEvento\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -26,8 +26,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Almacen\Http\Middleware\Authenticate::class,
+        'auth' => \FullcalendarEvento\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \Almacen\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \FullcalendarEvento\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }

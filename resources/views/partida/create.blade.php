@@ -37,6 +37,43 @@
            {{csrf_field()}}
 
            <div class="form-group">
+            <label class="col-sm-3 control-label">Año:<strog class="theme_color">*</strog></label>
+            <div class="col-sm-6">
+              <select class="form-control" name="ano" required id="ambito">
+                <option value="2017"> 
+                 2017         
+               </option>
+               <option value="2018"> 
+                 2018           
+               </option>
+
+               <option value="2019"> 
+                 2019          
+               </option>
+
+               <option value="2020"> 
+                 2020          
+               </option>
+
+               <option value="2021"> 
+                 2021          
+               </option>
+
+               <option value="2022"> 
+                 2022          
+               </option>
+
+               <option value="2023"> 
+                 2023          
+               </option>
+             </select>
+           </div>
+         </div><!--/form-group-->
+
+
+
+
+           <div class="form-group">
             <!-- autofocus name="nombre" id="nombre" -->
             <label class="col-sm-3 control-label">Numero de Partida: <strog class="theme_color">*</strog></label>
             <div class="col-sm-6">

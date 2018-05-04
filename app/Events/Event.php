@@ -1,6 +1,6 @@
 <?php
 
-namespace Almacen\Events;
+namespace FullcalendarEvento\Events;
 
 abstract class Event
 {

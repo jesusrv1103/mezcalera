@@ -44,8 +44,9 @@
             <table  class="display table table-bordered table-striped" id="dynamic-table">
               <thead>
                 <tr>
-                  <th>NumeroPartida</th>
+                  <th>Año</th>
                   <th>Concepto</th>
+                  <th>Numero Partida</th>
 
                   <th><center><b>Ver</b></center></th>
                   <th><center><b>Editar</b></center></th>
@@ -56,11 +57,12 @@
               <tbody>
                @foreach($partidas as $partida)
                <tr class="gradeA">
+                <td>{{$partida->ano}}</td>
                 <td>{{$partida->numeroPartida}}</td>
                 <td>{{$partida->concepto}}</td>
 
                 <th class="center">
-                <a href="{{URL::action('PartidaController@verPartidas',$partida->id)}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
+                  <a href="{{URL::action('PartidaController@verPartidas',$partida->id)}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
                 </td>
                 <th class="center">
                   <a href="{{URL::action('PartidaController@edit',$partida->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    
@@ -78,8 +80,9 @@
 
             <tfoot>
               <tr>
-                <th>NumeroPartida</th>
+                <th>Año</th>
                 <th>Concepto</th>
+                <th>Numero Partida</th>
                 <th><center><b>Ver</b></center></th>
                 <td><center><b>Editar</b></center></td>
                 <td><center><b>Borrar</b></center></td>

@@ -44,7 +44,7 @@
            <input  type ="hidden"  name="idPartida" value="{{$partidas->idPartida}}"/>
 
            <div class="form-group">
-            <label class="col-sm-3 control-label">Almacen<strog class="theme_color">*</strog></label>
+            <label class="col-sm-3 control-label">Meses<strog class="theme_color">*</strog></label>
             <div class="col-sm-4">
               <select name="idMes" class="form-control" required>
                 @foreach($meses as $mes)

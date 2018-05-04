@@ -4,7 +4,7 @@ namespace FullcalendarEvento;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Inventario extends Model
+class Fullcalendarevento extends Model
 {
-     protected $table="inventarios";
+    //
 }

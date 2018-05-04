@@ -1,6 +1,6 @@
 <?php
 
-namespace Almacen\Http\Middleware;
+namespace FullcalendarEvento\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 

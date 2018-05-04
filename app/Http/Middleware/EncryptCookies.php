@@ -1,6 +1,6 @@
 <?php
 
-namespace Almacen\Http\Middleware;
+namespace FullcalendarEvento\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

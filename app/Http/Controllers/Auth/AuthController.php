@@ -1,10 +1,10 @@
 <?php
 
-namespace Almacen\Http\Controllers\Auth;
+namespace FullcalendarEvento\Http\Controllers\Auth;
 
-use Almacen\User;
+use FullcalendarEvento\User;
 use Validator;
-use Almacen\Http\Controllers\Controller;
+use FullcalendarEvento\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Almacen\Providers;
+namespace FullcalendarEvento\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Almacen\Http\Requests;
+namespace FullcalendarEvento\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

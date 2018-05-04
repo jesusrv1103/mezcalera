@@ -1,15 +1,15 @@
 <?php
 
-namespace Almacen\Http\Controllers;
+namespace FullcalendarEvento\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Almacen\Http\Requests;
+use FullcalendarEvento\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
-use Almacen\Http\Controllers\Controller;
-use Almacen\Partida;
-use Almacen\Partida2;
+use FullcalendarEvento\Http\Controllers\Controller;
+use FullcalendarEvento\Partida;
+use FullcalendarEvento\Partida2;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -48,6 +48,7 @@ class PartidaController extends Controller
         $partidas= new Partida();
         $partidas->numeroPartida=$request->get('numeroPartida');
         $partidas->concepto=$request->get('concepto');
+        $partidas->ano=$request->get('ano');
         $partidas->estado='Activo';
         $partidas->save();
         return Redirect::to('partidas');
@@ -87,6 +88,7 @@ class PartidaController extends Controller
         $partidas=Partida::findOrFail($id);
         $partidas->numeroPartida=$request->get('numeroPartida');
         $partidas->concepto=$request->get('concepto');
+        $partidas->ano=$request->get('ano');
         $partidas->update();
         return Redirect::to('partidas');
     }
@@ -108,7 +110,7 @@ class PartidaController extends Controller
 
     public function verPartidas($id)
     {
-      
+
         $partidas=Partida::findOrFail($id);
         $idPartida=$partidas->id;
 
@@ -117,6 +119,7 @@ class PartidaController extends Controller
         ->join('meses','partidas2.idMes','=','meses.id')
         ->select('partidas2.*','meses.meses')
         ->where('partidas.estado','=','Activo')
+        ->where('partidas2.estado','=','Activo')
         ->where('idPartida','=',$idPartida)
         ->get();
         return view('partida.listaPartidas',["partidas"=>$partidas,"partidasMensuales"=>$partidasMensuales]);        

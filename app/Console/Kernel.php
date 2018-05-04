@@ -1,6 +1,6 @@
 <?php
 
-namespace Almacen\Console;
+namespace FullcalendarEvento\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
