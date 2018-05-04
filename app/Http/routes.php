@@ -28,3 +28,5 @@ Route::get('verPartidas/{id}','PartidaController@verPartidas')->name('partidas.v
 
 
 Route::get('crearPartidas2/{id}','Partida2Controller@create1')->name('partidas2.create1');
+
+Route::get('events', 'EventController@index');
