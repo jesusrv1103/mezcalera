@@ -61,12 +61,13 @@
               </thead>
               <tbody>
                @foreach($articulos as $articulos)
-               <tr class="gradeA">
+               @if($articulos->cantidad<=1)
+               <tr class="gradeA" bgcolor="yellow">
                 <td>{{$articulos->nombre}}</td>
-                <td>{{$articulos->cantidad}}</td>
+                <td bgcolor="#FF0000">{{$articulos->cantidad}}</td>
                 <td>{{$articulos->nomA}}</td>
-                <td>{{$articulos->UnidadMedidad}}</td>
-                <td>{{$articulos->fechaCaducidad}}</td>
+                <td >{{$articulos->UnidadMedidad}}</td>
+                <td >{{$articulos->fechaCaducidad}}</td>
                 <td>{{$articulos->tipoArticulo}}</td>
 
                 <td>{{$articulos->numeroPartida}}</td>
@@ -78,6 +79,25 @@
                 </td>
 
               </tr>
+              @else
+                <tr class="gradeA">
+                <td>{{$articulos->nombre}}</td>
+                <td >{{$articulos->cantidad}}</td>
+                <td>{{$articulos->nomA}}</td>
+                <td >{{$articulos->UnidadMedidad}}</td>
+                <td >{{$articulos->fechaCaducidad}}</td>
+                <td>{{$articulos->tipoArticulo}}</td>
+
+                <td>{{$articulos->numeroPartida}}</td>
+                <td class="center">
+                  <a href="{{URL::action('ArticulosController@edit',$articulos->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>
+                </td>
+                <td class="center">
+                  <a class="btn btn-danger btn-sm" data-target="#modal-delete-{{$articulos->id}}" data-toggle="modal" style="margin-right: 10px;"  role="button"><i class="fa fa-eraser"></i></a>
+                </td>
+
+              </tr>
+              @endif
               @include('articulo.modal')
               @endforeach
             </tbody>

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
+
+
     {!!Html::style('css/font-awesome.css')!!}
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/animate.css')!!}
@@ -49,6 +51,9 @@
     {!!Html::style('plugins/wizard/css/smart_wizard_theme_circles.css')!!}
     {!!Html::style('plugins/wizard/css/smart_wizard_theme_arrows.css')!!}
     {!!Html::style('plugins/wizard/css/smart_wizard_theme_dots.css')!!}
+
+    {!!Html::style('plugins/calendar/fullcalendar.css')!!}
+     {!!Html::style('plugins/calendar/fullcalendar.print.css')!!}
     
 
   </head>
@@ -189,5 +194,9 @@
 
 
 {!!Html::script('https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js')!!}
+
+
+{!!Html::script('plugins/calendar/fullcalendar.min.js')!!}
+{!!Html::script('plugins/calendar/external-draging-calendar.js')!!}
 </body>
 </html>
