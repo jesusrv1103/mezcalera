@@ -1,6 +1,6 @@
 <?php
 
-namespace FullcalendarEvento\Providers;
+namespace Almacen\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'FullcalendarEvento\Events\SomeEvent' => [
-            'FullcalendarEvento\Listeners\EventListener',
+        'Almacen\Events\SomeEvent' => [
+            'Almacen\Listeners\EventListener',
         ],
     ];
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace FullcalendarEvento\Console\Commands;
+namespace Almacen\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

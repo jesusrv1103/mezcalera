@@ -1,11 +1,11 @@
 <?php
 
-namespace FullcalendarEvento\Http\Controllers;
+namespace Almacen\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use FullcalendarEvento\Http\Requests;
-use FullcalendarEvento\Http\Controllers\Controller;
+use Almacen\Http\Requests;
+use Almacen\Http\Controllers\Controller;
 
 class InventarioController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace FullcalendarEvento\Providers;
+namespace Almacen\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'FullcalendarEvento\Http\Controllers';
+    protected $namespace = 'Almacen\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

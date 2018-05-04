@@ -1,6 +1,6 @@
 <?php
 
-namespace FullcalendarEvento\Http\Middleware;
+namespace Almacen\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => FullcalendarEvento\User::class,
+    'model' => Almacen\User::class,
 
     /*
     |--------------------------------------------------------------------------

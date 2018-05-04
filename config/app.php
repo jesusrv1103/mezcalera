@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        FullcalendarEvento\Providers\AppServiceProvider::class,
-        FullcalendarEvento\Providers\AuthServiceProvider::class,
-        FullcalendarEvento\Providers\EventServiceProvider::class,
-        FullcalendarEvento\Providers\RouteServiceProvider::class,
+        Almacen\Providers\AppServiceProvider::class,
+        Almacen\Providers\AuthServiceProvider::class,
+        Almacen\Providers\EventServiceProvider::class,
+        Almacen\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,

@@ -1,8 +1,8 @@
 <?php
 
-namespace FullcalendarEvento\Http\Controllers\Auth;
+namespace Almacen\Http\Controllers\Auth;
 
-use FullcalendarEvento\Http\Controllers\Controller;
+use Almacen\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

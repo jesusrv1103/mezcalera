@@ -1,6 +1,6 @@
 <?php
 
-namespace FullcalendarEvento\Exceptions;
+namespace Almacen\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

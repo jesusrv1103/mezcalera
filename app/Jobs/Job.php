@@ -1,6 +1,6 @@
 <?php
 
-namespace FullcalendarEvento\Jobs;
+namespace Almacen\Jobs;
 
 use Illuminate\Bus\Queueable;
 

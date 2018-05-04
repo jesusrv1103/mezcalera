@@ -1,6 +1,6 @@
 <?php
 
-namespace FullcalendarEvento;
+namespace Almacen;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace FullcalendarEvento\Http\Controllers;
+namespace Almacen\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use FullcalendarEvento\Http\Requests;
+use Almacen\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
-use FullcalendarEvento\Http\Controllers\Controller;
-use FullcalendarEvento\Proveedor;
+use Almacen\Http\Controllers\Controller;
+use Almacen\Proveedor;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 
