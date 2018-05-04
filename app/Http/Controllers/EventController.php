@@ -67,5 +67,9 @@ class EventController extends Controller
     }
 
 
+    public function index1()
+    {
+        return view('event.index');
+    }
 
 }
