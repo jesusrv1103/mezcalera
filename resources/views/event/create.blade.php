@@ -32,56 +32,51 @@
           </div>
         </div>
 
-            
+
 
         <div class="porlets-content">
           <form action="{{route('events.store')}}" method="POST" class="form-horizontal row-border"  parsley-validate novalidate>
- {{csrf_field()}}
-      
-
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Titulo del Evento<strog class="theme_color">*</strog></label>
-                <div class="col-sm-6">
-
-                 <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="title" id="title" 
-                 maxlength="40" required value="" placeholder="Ingrese el Nombre del Evento">
-               </div>
-             </div><!--/form-group-->
+           {{csrf_field()}}
 
 
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Inicio del Evento<strog class="theme_color">*</strog></label>
-                <div class="col-sm-6">
+           <div class="form-group">
+            <label class="col-sm-3 control-label">Titulo del Evento<strog class="theme_color">*</strog></label>
+            <div class="col-sm-6">
 
-                 <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="start_date'" id="start_date'" 
-                 maxlength="40" required value="" placeholder="Ingrese Fecha Inicial">
-               </div>
-             </div><!--/form-group-->
-
-s
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Finalización del Evento<strog class="theme_color">*</strog></label>
-                <div class="col-sm-6">
-
-                 <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="end_date" id="end_date" 
-                 maxlength="40" required value="" placeholder="Ingrese Fecha de Finalización">
-               </div>
-             </div><!--/form-group-->
+             <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="title" id="title" 
+             maxlength="40" required value="" placeholder="Ingrese el Nombre del Evento">
+           </div>
+         </div><!--/form-group-->
 
 
-             
+         <div class="form-group">
+          <label class="col-sm-3 control-label">Inicio del Evento: <strog class="theme_color">*</strog></label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control mask" name="start_date" required value="" data-inputmask="'alias': 'date'">
+          </div>
+        </div><!--/form-group-->
 
-             <div class="form-group">
-              <div class="col-sm-offset-7 col-sm-5">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-                <a href="{{route('events.store')}}" class="btn btn-default"> Cancelar</a>
-              </div>
-            </div><!--/form-group-->
-          </form>
-        </div><!--/porlets-content-->
-      </div><!--/block-web-->
-    </div><!--/col-md-12-->
-  </div><!--/row-->
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Finalización del Evento: <strog class="theme_color">*</strog></label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control mask" name="end_date" required value="" data-inputmask="'alias': 'date'">
+          </div>
+        </div><!--/form-group-->
+
+
+
+       <div class="form-group">
+        <div class="col-sm-offset-7 col-sm-5">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <a href="{{route('events.store')}}" class="btn btn-default"> Cancelar</a>
+        </div>
+      </div><!--/form-group-->
+    </form>
+  </div><!--/porlets-content-->
+</div><!--/block-web-->
+</div><!--/col-md-12-->
+</div><!--/row-->
 </div><!--/container clear_both padding_fix--> 
 
 @endsection

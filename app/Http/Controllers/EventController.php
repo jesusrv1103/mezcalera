@@ -42,18 +42,18 @@ class EventController extends Controller
     public function create()
     {
 
-        return view('calendar.create');
+        return view('event.create');
     }
 
     public function store(Request $request)
     {
-        $events= new Calendar();
+        $events= new Event();
         $events->title=$request->get('title');
         $events->start_date=$request->get('start_date');
         $events->end_date=$request->get('end_date');
-        $events->estado='Activo';
+  
         $events->save();
-        return Redirect::to('calendar');
+        return Redirect::to('events');
     }
 
     public function update(Request $request, $id)
@@ -69,7 +69,8 @@ class EventController extends Controller
 
     public function index1()
     {
-        return view('event.index');
+         $events= DB::table('events') ->get();
+        return view('event.index',['events' => $events]);
     }
 
 }

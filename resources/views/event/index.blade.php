@@ -21,7 +21,7 @@
           <div class="row" style="margin-top: 15px; margin-bottom: 12px;">
             <div class="col-sm-7">
               <div class="actions"> </div>
-              <h2 class="content-header theme_color" style="margin-top: -5px;">&nbsp;&nbsp;Proveedores</h2>
+              <h2 class="content-header theme_color" style="margin-top: -5px;">&nbsp;&nbsp;Eventos</h2>
             </div>
             <div class="col-md-5">
               <div class="btn-group pull-right">
@@ -56,10 +56,10 @@
               <tbody>
                @foreach($events as $calendario)
                <tr class="gradeA">
-                <td>{{$events->title}}</td>
-                <td>{{$events->start_date}}</td>
-                <td>{{$events->end_date}}</td>
-                <td class="center">
+                <td>{{$calendario->title}}</td>
+                <td>{{$calendario->start_date}}</td>
+                <td>{{$calendario->end_date}}</td>
+                <td class="pull-left">
                   <a href="" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    
                 </td>
                 <td class="center">
@@ -68,7 +68,7 @@
                 </td>
 
               </tr>
-              @include('events.modal')
+              @include('event.modal')
               @endforeach
 
 
