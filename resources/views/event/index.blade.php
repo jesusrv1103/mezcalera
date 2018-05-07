@@ -59,12 +59,12 @@
                 <td>{{$calendario->title}}</td>
                 <td>{{$calendario->start_date}}</td>
                 <td>{{$calendario->end_date}}</td>
-                <td class="pull-left">
+                <td class="center">
                   <a href="" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    
                 </td>
                 <td class="center">
-                  <a class="btn btn-danger btn-sm" href="#modalEliminar" style="margin-right: 10px;"  
-                  data-target="" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
+                 <a class="btn btn-danger btn-sm" href="#modalEliminar" style="margin-right: 10px;"  
+                  data-target="#modal-delete-{{$calendario->id}}" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
                 </td>
 
               </tr>
