@@ -1,12 +1,12 @@
 <!doctype html>
 <h1>
  
- <div class="pull-left breadcrumb_admin clear_both">
-  <div class="pull-left page_title theme_color">
-    <h1>Inicio</h1>
+    <div>
+
+
+        
         <html lang="es">
     </h1>
-    <tr>
 
     <head>
 
@@ -21,10 +21,29 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
 
     </head>
+ <div class="container">
+        <b>
+            
+            <div class="col-md-10">
+              <div class="btn-group pull-center">
+    <h2><i><ol>Calendario de Actividades de ADQUISINET
+       </i></ol></h2>
 
     <body>
+</b>
 
         <div class="container">
+        <b>
+            
+            <div class="col-md-12">
+              <div class="btn-group pull-center">
+                  <div class="btn-group" style="margin-right: 10px;">
+                    <a class="btn btn-default btn-success tooltips" href="events/create" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Direccion"> <i class="fa fa-plus"></i> Registrar </a>
+
+                </div>
+            </div>
+        </b>
+<hr>
 
             <div class="panel panel-primary">
 
@@ -32,10 +51,7 @@
 
 
 
-
-
-                    Calendario de Actividades   
-
+ <i class="eye icon"></i> 
                 </div>
 
                 <div class="panel-body" >
@@ -43,6 +59,8 @@
                     {!! $calendar->calendar() !!}
 
                     {!! $calendar->script() !!}
+
+                    <hr>
 
                 </div>
 
