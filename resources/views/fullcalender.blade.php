@@ -24,7 +24,7 @@
  <div class="container">
         <b>
             
-            <div class="col-md-10">
+            <div class="col-md-12">
               <div class="btn-group pull-center">
     <h2><i><ol>Calendario de Actividades de ADQUISINET
        </i></ol></h2>
@@ -41,7 +41,14 @@
                     <a class="btn btn-default btn-success tooltips" href="events/create" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nueva Direccion"> <i class="fa fa-plus"></i> Registrar </a>
 
                 </div>
+           <div class="btn-group" style="margin-right: 10px;">
+                    <a class="btn btn-default btn-warning tooltips" href="event2" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cancelar"> <i class="fa fa-refresh"></i> Cancelar </a>
+
+                </div>
             </div>
+
+
+
         </b>
 <hr>
 
