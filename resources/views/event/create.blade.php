@@ -52,7 +52,8 @@
          <div class="form-group">
           <label class="col-sm-3 control-label">Inicio del Evento: <strog class="theme_color">*</strog></label>
           <div class="col-sm-6">
-            <input type="text" class="form-control mask" name="start_date" required value="" data-inputmask="'alias': 'date'">
+            <input class="form-control mask"
+            data-inputmask="'alias': 'date'" type="text"  name="start_date" required >
           </div>
         </div><!--/form-group-->
 
@@ -60,21 +61,22 @@
         <div class="form-group">
           <label class="col-sm-3 control-label">Finalización del Evento: <strog class="theme_color">*</strog></label>
           <div class="col-sm-6">
-            <input type="text" class="form-control mask" name="end_date" required value="" data-inputmask="'alias': 'date'">
+            <input class="form-control mask"
+            data-inputmask="'alias': 'date'"  type="text"  name="end_date" required >
           </div>
         </div><!--/form-group-->
 
 
 
-       <div class="form-group">
-        <div class="col-sm-offset-7 col-sm-5">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <a href="{{route('events.store')}}" class="btn btn-default"> Cancelar</a>
-        </div>
-      </div><!--/form-group-->
-    </form>
-  </div><!--/porlets-content-->
-</div><!--/block-web-->
+        <div class="form-group">
+          <div class="col-sm-offset-7 col-sm-5">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="{{URL::action('EventController@index1')}}" class="btn btn-default"> Cancelar</a>
+          </div>
+        </div><!--/form-group-->
+      </form>
+    </div><!--/porlets-content-->
+  </div><!--/block-web-->
 </div><!--/col-md-12-->
 </div><!--/row-->
 </div><!--/container clear_both padding_fix--> 

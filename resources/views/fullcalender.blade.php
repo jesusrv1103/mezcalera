@@ -1,61 +1,55 @@
-@extends('layouts.principal')
-@section('contenido')
+<!doctype html>
+<h1>
+ 
+ <div class="pull-left breadcrumb_admin clear_both">
+  <div class="pull-left page_title theme_color">
+    <h1>Inicio</h1>
+        <html lang="es">
+    </h1>
+    <tr>
 
-        <div class="contentpanel">
-          <!--\\\\\\\ contentpanel start\\\\\\-->
-          <div class="pull-left breadcrumb_admin clear_both">
-            <div class="pull-left page_title theme_color">
-              <h1>calendar</h1>
-              <h2 class="">Subtitle goes here...</h2>
-            </div>
-            <div class="pull-right">
-              <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">APPS</a></li>
-                <li class="active">calendar</li>
-              </ol>
-            </div>
-          </div>
-          
-          
-          
-          <div class="container clear_both padding_fix">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</strong>. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <div class="row">
-              
-              <div class="col-md-2">
-                <div class="panel">
-                  
-                  <div id='external-events'>
-                    <div class="fc-heading">
-                      <h5>Draggable Events</h5>
-                    </div>
-                    <div class="fc-body">
-                      <div class='external-event'>My Event 1</div>
-                      <div class='external-event'>My Event 2</div>
-                      <div class='external-event'>My Event 3</div>
-                      <div class='external-event'>My Event 4</div>
-                      <div class='external-event'>My Event 5</div>
-                      <p>
-                        <input type='checkbox' id='drop-remove' /> <label for='drop-remove'>remove after drop</label>
-                      </p>
-                    </div>
-                  </div>
+    <head>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+
+
+
+
+
+                    Calendario de Actividades   
+
                 </div>
-              </div>
-              <div class="col-md-10">
-                <div class="block-web">
-                  <div id='calendar'></div>
+
+                <div class="panel-body" >
+
+                    {!! $calendar->calendar() !!}
+
+                    {!! $calendar->script() !!}
+
                 </div>
-              </div>
-              
+
             </div>
-          </div>
-          
-          
-          
+
         </div>
-        <!--\\\\\\\ content panel end \\\\\\-->
 
+    </body>
 
-@endsection
+    </html>

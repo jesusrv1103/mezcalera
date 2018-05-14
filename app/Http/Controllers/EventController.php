@@ -49,28 +49,80 @@ class EventController extends Controller
     {
         $events= new Event();
         $events->title=$request->get('title');
-        $events->start_date=$request->get('start_date');
-        $events->end_date=$request->get('end_date');
-  
+        $fechaIAno=substr($request->get('start_date'),6,7);
+        $fechaIMes=substr($request->get('start_date'),3,2);
+        $fechaIDia=substr($request->get('start_date'),0,2);
+
+        $fechaInicio=$fechaIAno."-".$fechaIMes."-".$fechaIDia;
+        
+
+        $fechaIAno=substr($request->get('end_date'),6,7);
+        $fechaIMes=substr($request->get('end_date'),3,2);
+        $fechaIDia=substr($request->get('end_date'),0,2);
+        $fechaFin=$fechaIAno."-".$fechaIMes."-".$fechaIDia;
+
+        $events->start_date=$fechaInicio;
+        $events->end_date=$fechaFin;
+        
         $events->save();
-        return Redirect::to('events');
+        $events= DB::table('events') ->get();
+        return view('event.index',['events' => $events]);
     }
 
     public function update(Request $request, $id)
     {
-        $events=Calendar::findOrFail($id);
+        $events=Event::findOrFail($id);
         $events->title=$request->get('title');
-        $events->start_date=$request->get('start_date');
-        $events->end_date=$request->get('end_date');
+
+        $fechaIDia=substr($request->get('start_date'),0,2);
+        $fechaIMes=substr($request->get('start_date'),3,2);
+        $fechaIAno=substr($request->get('start_date'),6,7);
+        $fechaInicio=$fechaIAno."-".$fechaIMes."-".$fechaIDia;
+        $fechaIDia=substr($request->get('end_date'),0,2);
+        $fechaIMes=substr($request->get('end_date'),3,2);
+        $fechaIAno=substr($request->get('end_date'),6,7);
+        $fechaFin=$fechaIAno."-".$fechaIMes."-".$fechaIDia;
+
+        $events->start_date=$fechaInicio;
+        $events->end_date=$fechaFin;
+        
+
         $events->update();
-        return Redirect::to('calendar');
+        $events= DB::table('events') ->get();
+        return view('event.index',['events' => $events]);
     }
 
 
     public function index1()
     {
-         $events= DB::table('events') ->get();
-        return view('event.index',['events' => $events]);
-    }
+       $events= DB::table('events') ->get();
+       return view('event.index',['events' => $events]);
+   }
+
+   public function edit($id)
+   {
+    $events=Event::findOrFail($id);
+    $fechaInicio=$events->end_date;
+
+    $fechaIAno=substr($fechaInicio,0,4);
+
+    $fechaIMes=substr($fechaInicio,5,-3);
+ 
+    $fechaIDia=substr($fechaInicio,8,10);
+   
+    $fechaII=$fechaIDia."/".$fechaIMes."/".$fechaIAno;
+ 
+    return view("event.edit",["events"=>$events,"fechaII"=>$fechaII]);
+}
+
+public function destroy($id)
+{
+    $events=Event::findOrFail($id);
+    $events->delete();
+    $events= DB::table('events') ->get();
+    return view('event.index',['events' => $events]);
+}
+
+
 
 }
