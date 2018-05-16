@@ -53,7 +53,7 @@
     {!!Html::style('plugins/wizard/css/smart_wizard_theme_dots.css')!!}
 
     {!!Html::style('plugins/calendar/fullcalendar.css')!!}
-     {!!Html::style('plugins/calendar/fullcalendar.print.css')!!}
+    {!!Html::style('plugins/calendar/fullcalendar.print.css')!!}
     
 
   </head>
@@ -154,7 +154,6 @@
 </div>
 <!--\\\\\\\ inner end\\\\\\-->
 </div>
-
 
 {!!Html::script('js/jquery-2.1.0.js')!!}
 {!!Html::script('js/script.js')!!}

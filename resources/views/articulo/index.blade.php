@@ -45,7 +45,7 @@
           <div class="table-responsive">
             <table  class="display table table-bordered table-striped" id="dynamic-table">
               <thead>
-                <tr>
+                <tr >
                   <th>Nombre</th>
                   <th>Cantidad</th>
                   <th>Almacén</th>
@@ -60,69 +60,50 @@
                 </tr>
               </thead>
               <tbody>
-               @foreach($articulos as $articulos)
-               @if($articulos->cantidad<=1)
-               <tr class="gradeA" bgcolor="yellow">
-                <td>{{$articulos->nombre}}</td>
-                <td bgcolor="#FF0000">{{$articulos->cantidad}}</td>
-                <td>{{$articulos->nomA}}</td>
-                <td >{{$articulos->UnidadMedidad}}</td>
-                <td >{{$articulos->fechaCaducidad}}</td>
-                <td>{{$articulos->tipoArticulo}}</td>
 
-                <td>{{$articulos->numeroPartida}}</td>
-                <td class="center">
-                  <a href="{{URL::action('ArticulosController@edit',$articulos->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>
-                </td>
-                <td class="center">
-                  <a class="btn btn-danger btn-sm" data-target="#modal-delete-{{$articulos->id}}" data-toggle="modal" style="margin-right: 10px;"  role="button"><i class="fa fa-eraser"></i></a>
-                </td>
+                @foreach($articulos as $articulos)
 
-              </tr>
-              @else
-                <tr class="gradeA">
-                <td>{{$articulos->nombre}}</td>
-                <td >{{$articulos->cantidad}}</td>
-                <td>{{$articulos->nomA}}</td>
-                <td >{{$articulos->UnidadMedidad}}</td>
-                <td >{{$articulos->fechaCaducidad}}</td>
-                <td>{{$articulos->tipoArticulo}}</td>
+                <tr class="gradeA" >
+                  <td>{{$articulos->nombre}}</td>
+                  <td ">{{$articulos->cantidad}}</td>
+                  <td>{{$articulos->nomA}}</td>
+                  <td >{{$articulos->UnidadMedidad}}</td>
+                  <td >{{$articulos->fechaCaducidad}}</td>
+                  <td>{{$articulos->tipoArticulo}}</td>
 
-                <td>{{$articulos->numeroPartida}}</td>
-                <td class="center">
-                  <a href="{{URL::action('ArticulosController@edit',$articulos->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>
-                </td>
-                <td class="center">
-                  <a class="btn btn-danger btn-sm" data-target="#modal-delete-{{$articulos->id}}" data-toggle="modal" style="margin-right: 10px;"  role="button"><i class="fa fa-eraser"></i></a>
-                </td>
+                  <td>{{$articulos->numeroPartida}}</td>
+                  <td class="center">
+                    <a href="{{URL::action('ArticulosController@edit',$articulos->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>
+                  </td>
+                  <td class="center">
+                    <a class="btn btn-danger btn-sm" data-target="#modal-delete-{{$articulos->id}}" data-toggle="modal" style="margin-right: 10px;"  role="button"><i class="fa fa-eraser"></i></a>
+                  </td>
+                </tr>  
+                @include('articulo.modal')
+                @endforeach
+              </tbody>
+              <tfoot>
+                <tr>
+                 <th>Nombre</th>
+                 <th>Cantidad</th>
+                 <th>Almacén</th>
+                 <th>Unidad de Medida</th>
+                 <th>Fecha Caducidad</th>
+                 <th>Tipo Artículo</th>
+                 <th>Partida</th>
+                 <td><center><b>Editar</b></center></td>
+                 <td><center><b>Borrar</b></center></td>
 
-              </tr>
-              @endif
-              @include('articulo.modal')
-              @endforeach
-            </tbody>
-            <tfoot>
-              <tr>
-               <th>Nombre</th>
-               <th>Cantidad</th>
-               <th>Almacén</th>
-               <th>Unidad de Medida</th>
-               <th>Fecha Caducidad</th>
-               <th>Tipo Artículo</th>
-               <th>Partida</th>
-               <td><center><b>Editar</b></center></td>
-               <td><center><b>Borrar</b></center></td>
-
-             </tr>
-           </tfoot>
-         </table>
-       </div><!--/table-responsive-->
-     </div><!--/porlets-content-->
-   </div><!--/block-web-->
- </div><!--/col-md-12-->
-</div><!--/row-->
+               </tr>
+             </tfoot>
+           </table>
+         </div><!--/table-responsive-->
+       </div><!--/porlets-content-->
+     </div><!--/block-web-->
+   </div><!--/col-md-12-->
+ </div><!--/row-->
 
 
 
 
-@endsection
+ @endsection

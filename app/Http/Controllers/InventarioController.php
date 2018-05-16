@@ -16,8 +16,12 @@ class InventarioController extends Controller
      */
     public function index()
     {
-        //
-    }
+     $articulos= DB::table('articulos')
+     ->join('almacenes as a', 'articulos.idAlmacen', '=', 'a.id')
+     ->join('partidas','articulos.idPartida','=','partidas.id')
+     ->select('articulos.nombre','articulos.cantidad','partidas.numeroPartida','partidas.concepto','a.nombre as nomA')
+     ->where('articulos.estado','Activo')->get();
+ }
 
     /**
      * Show the form for creating a new resource.
