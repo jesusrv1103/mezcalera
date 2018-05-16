@@ -82,14 +82,14 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Tipo de Usuario:<strog class="theme_color">*</strog></label>
             <div class="col-sm-6">
-              <select class="form-control" name="" required id="ambito">
-               <option value="Administrador"> 
+              <select class="form-control" name="tipoUsuario" required id="ambito">
+               <option value="ADMINISTRADOR"> 
                  ADMINISTRADOR          
                </option>
-                <option value="Almacenista"> 
+                <option value="ALMACENISTA"> 
                  ALMACENISTA          
                </option>
-               <option value="UsuarioRegular"> 
+               <option value="USUARIO REGULAR"> 
                  USUARIO REGULAR           
                </option>
              </select>

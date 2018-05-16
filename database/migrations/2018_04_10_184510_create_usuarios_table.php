@@ -18,6 +18,7 @@ class CreateUsuariosTable extends Migration
             $table->string('apellido');
             $table->string('nombreusuario');
             $table->string('contraseña');
+            $table->string('tipoUsuario');
             $table->integer('idDireccion')->unsigned();
             $table->foreign('idDireccion')->references('id')->on('direcciones');
             $table->string('estado');
