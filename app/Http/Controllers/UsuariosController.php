@@ -57,10 +57,14 @@ class UsuariosController extends Controller
         $usuarios->apellido=$request->get('apellido');
         $usuarios->nombreusuario=$request->get('nombreusuario');
         $usuarios->contraseña=$request->get('contraseña');
+        $usuarios->tipoUsuario=$request->get('tipoUsuario');
         $usuarios->idDireccion=$request->get('idDireccion');
         $usuarios->estado='Activo';
         $usuarios->save();
         return Redirect::to('usuarios');
+
+
+        
     }
 
     /**
@@ -103,6 +107,7 @@ class UsuariosController extends Controller
         $usuarios->nombreCompleto=$request->get('nombreCompleto');
         $usuarios->apellido=$request->get('apellido');
         $usuarios->nombreusuario=$request->get('nombreusuario');
+        $usuarios->tipoUsuario=$request->get('tipoUsuario');
         $usuarios->contraseña=$request->get('contraseña');
         $usuarios->idDireccion=$request->get('idDireccion');
 
@@ -119,8 +124,8 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         $usuarios=Usuarios::findOrFail($id);
-       $usuarios->estado="Inactivo";
-       $usuarios->update();
-       return Redirect::to('usuarios');
-   }
+        $usuarios->estado="Inactivo";
+        $usuarios->update();
+        return Redirect::to('usuarios');
+    }
 }

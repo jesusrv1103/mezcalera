@@ -2,10 +2,16 @@
 
 namespace Almacen\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
 use Almacen\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
+use Almacen\Inventarios;
+use DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class InventarioController extends Controller
 {
@@ -16,12 +22,14 @@ class InventarioController extends Controller
      */
     public function index()
     {
-     $articulos= DB::table('articulos')
-     ->join('almacenes as a', 'articulos.idAlmacen', '=', 'a.id')
-     ->join('partidas','articulos.idPartida','=','partidas.id')
-     ->select('articulos.nombre','articulos.cantidad','partidas.numeroPartida','partidas.concepto','a.nombre as nomA')
-     ->where('articulos.estado','Activo')->get();
- }
+        $inventarios= DB::table('articulos')
+        ->join('almacenes as a', 'articulos.idAlmacen', '=', 'a.id')
+        ->join('partidas','articulos.idPartida','=','partidas.id')
+        ->select('articulos.id','articulos.nombre','articulos.cantidad','partidas.numeroPartida','partidas.concepto','a.nombre as nomA')
+        ->where('articulos.estado','Activo')->get();
+        return view('inventario.index',['inventarios' => $inventarios]);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -41,7 +49,13 @@ class InventarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inventarios= new inventarios();
+        $inventarios->numeroPartida=$request->get('numeroPartida');
+        $inventarios->concepto=$request->get('concepto');
+        $inventarios->nombre=$request->get('nombre');
+        $inventarios->cantidad=$request->get('cantidad');
+        $inventarios->save();
+        return Redirect::to('inventarios');
     }
 
     /**

@@ -62,7 +62,7 @@
                 <td>{{$usuarios->apellido}}</td>
                 <td>{{$usuarios->nombreusuario}}</td>
                 <td>{{$usuarios->contraseña}}</td>
-               <td></td>
+                <td>{{$usuarios->tipoUsuario}}</td>
                 <td>{{$usuarios->nombre}}</td>
 
                 <td class="center">
