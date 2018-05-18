@@ -16,7 +16,7 @@ class SolicitudController extends Controller
      */
     public function index()
     {
-        //
+           return view('solicitud.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class SolicitudController extends Controller
      */
     public function create()
     {
-        //
+        return view('solicitud.create');
     }
 
     /**
