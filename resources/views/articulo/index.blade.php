@@ -1,7 +1,7 @@
  @extends('layouts.principal')
  @section('contenido')
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+ {!!Html::style('https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css')!!}
  <!--\\\\\\\ contentpanel start\\\\\\-->
  <div class="pull-left breadcrumb_admin clear_both">
   <div class="pull-left page_title theme_color">
@@ -140,7 +140,7 @@
            </tfoot>
          </table>
 
-         
+         <ul class="pagination pagination-lg pager" id="myPager"></ul>
        </div><!--/table-responsive-->
      </div><!--/porlets-content-->
    </div><!--/block-web-->
@@ -148,13 +148,51 @@
 </div><!--/row-->
 
 
+{!!Html::script('https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js')!!}
 
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<script language="javascript">
+  function doSearch()
+  {
+    var tableReg = document.getElementById('datos');
+    var searchText = document.getElementById('searchTerm').value.toLowerCase();
+    var cellsOfRow="";
+    var found=false;
+    var compareWith="";
 
-<script type="text/javascript">
-  $(document).ready( function () {
+      // Recorremos todas las filas con contenido de la tabla
+      for (var i = 1; i < tableReg.rows.length; i++)
+      {
+        cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+        found = false;
+        // Recorremos todas las celdas
+        for (var j = 0; j < cellsOfRow.length && !found; j++)
+        {
+          compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+          // Buscamos el texto en el contenido de la celda
+          if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1))
+          {
+            found = true;
+          }
+        }
+        if(found)
+        {
+          tableReg.rows[i].style.display = '';
+        } else {
+          // si no ha encontrado ninguna coincidencia, esconde la
+          // fila de la tabla
+          tableReg.rows[i].style.display = 'none';
+        }
+      }
+    }
+
+
+
+
+
+$(document).ready( function () {
     $('#datos').DataTable();
-  } );
-</script>
+} );
 
-@endsection
+  </script>
+
+  @endsection
