@@ -30,7 +30,7 @@ class EventController extends Controller
                     // Add color and link on event
                     [
                     'color' => '#f05050',
-                    'url' => 'pass here url and any route',
+                    'url' => 'adquisinet',
                     ]
                     );
             }
