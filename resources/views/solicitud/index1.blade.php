@@ -28,7 +28,7 @@
                 <b>
 
                   <div class="btn-group" style="margin-right: 10px;">
-                    <a class="btn btn-sm btn-success tooltips" href="solicitud" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Regist"> <i class="fa fa-plus"></i> Registrar </a>
+                    <a class="btn btn-sm btn-warning tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descargar Solicitud"> <i class="fa fa-download"></i> Descargar </a>
 
                   </div>
 
@@ -49,10 +49,7 @@
                   <th>Descripción</th>
                   <th>Cantidad Asignada</th>
                   
-                  <td><center><b>Ver</b></center></td>
-                  <td><center><b>Editar</b></center></td>
-                  <td><center><b>Borrar</b></center></td>
-
+                 
 
                 </tr>
               </thead>
@@ -68,17 +65,7 @@
 
 
 
-                <th class="center">
-                  <a href="" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
-                </td>
-
-                <td class="center">
-                  <a href="" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    
-                </td>
-                <td class="center">
-                  <a class="btn btn-danger btn-sm" href="#modalEliminar" style="margin-right: 10px;"  
-                  data-target="" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
-                </td>
+             
 
               </tr>
 
@@ -94,9 +81,7 @@
                <th>Cantidad Asignada</th>
 
 
-               <td><center><b>Ver</b></center></td>
-               <td><center><b>Editar</b></center></td>
-               <td><center><b>Borrar</b></center></td>
+              
 
              </tr>
            </tfoot>
