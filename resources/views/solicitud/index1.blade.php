@@ -44,10 +44,10 @@
             <table  class="display table table-bordered table-striped" id="dynamic-table">
               <thead>
                 <tr>
-                  <th>Numero de Solicitud</th>
-                  <th>Fecha</th>
-                  <th>Área o Dirección</th>
-                  <th>Nombre</th>
+                  <th>Cantidad Pedida</th>
+                  <th>Unidad de Medida</th>
+                  <th>Descripción</th>
+                  <th>Cantidad Asignada</th>
                   
                   <td><center><b>Ver</b></center></td>
                   <td><center><b>Editar</b></center></td>
@@ -57,52 +57,54 @@
                 </tr>
               </thead>
               <tbody>
-               @foreach($solicitudes as $solicitud)
+
                <tr class="gradeA">
 
-                <td>{{$solicitud->numeroSolicitud}}</td>
-                <td>{{$solicitud->fechaS}}</td>
-                <td>{{$solicitud->areaDireccion}}</td>
-                <td>{{$solicitud->usuario}}</td>
+                <th>22</th>
+                <th>Pza</th>
+                <th>agua embotellada</th>
+                <th>21</th>
+
+
+
 
                 <th class="center">
-                <a href="{{URL::action('SolicitudController@verSolicitudes')}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
+                  <a href="" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
                 </td>
 
                 <td class="center">
-                  <a href="{{URL::action('SolicitudController@edit',$solicitud->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    
+                  <a href="" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    
                 </td>
                 <td class="center">
                   <a class="btn btn-danger btn-sm" href="#modalEliminar" style="margin-right: 10px;"  
-                  data-target="#modal-delete-{{$solicitud->id}}" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
+                  data-target="" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
                 </td>
 
               </tr>
-              @include('solicitud.modal')
-              @endforeach
 
 
 
             </tbody>
             <tfoot>
               <tr>
-                <th>Numero de Solicitud</th>
-                <th>Fecha</th>
-                <th>Área o Dirección</th>
-                <th>Nombre</th>
+
+               <th>Cantidad Pedida</th>
+               <th>Unidad de Medida</th>
+               <th>Descripción</th>
+               <th>Cantidad Asignada</th>
 
 
-                <td><center><b>Ver</b></center></td>
-                <td><center><b>Editar</b></center></td>
-                <td><center><b>Borrar</b></center></td>
+               <td><center><b>Ver</b></center></td>
+               <td><center><b>Editar</b></center></td>
+               <td><center><b>Borrar</b></center></td>
 
-              </tr>
-            </tfoot>
-          </table>
-        </div><!--/table-responsive-->
-      </div><!--/porlets-content-->
-    </div><!--/block-web-->
-  </div><!--/col-md-12-->
+             </tr>
+           </tfoot>
+         </table>
+       </div><!--/table-responsive-->
+     </div><!--/porlets-content-->
+   </div><!--/block-web-->
+ </div><!--/col-md-12-->
 </div><!--/row-->
 
 

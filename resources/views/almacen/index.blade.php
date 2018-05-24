@@ -13,7 +13,6 @@
     </ol>
   </div>
 </div>
-<div> <h1>Hola Mundo </h1></div>
 <div class="container clear_both padding_fix">
   <div class="row">
     <div class="col-md-12">
@@ -89,5 +88,4 @@
   </div><!--/row-->
 
 
-hoadfg
 @endsection

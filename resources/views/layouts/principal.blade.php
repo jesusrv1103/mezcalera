@@ -130,9 +130,7 @@
                 <li> <a href="{{url('events')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Calendario</b> </a> </li>
 
                 <li> <a href="{{url('direcciones')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Departamento</b> </a> </li>
-
-                <li> <a href="{{url('solicitudes')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Solicitud</b> </a> </li>
-
+                
               </ul>
             </li>
             <li class="left_nav_active theme_border"> <a href="javascript:void(0);"> <i class="fa fa-envelope"></i> Articulos<span class="plus"><i class="fa fa-plus"></i></span> </a>
