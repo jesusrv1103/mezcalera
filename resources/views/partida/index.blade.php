@@ -45,8 +45,8 @@
               <thead>
                 <tr>
                   <th>Año</th>
-                  <th>Concepto</th>
                   <th>Numero Partida</th>
+                  <th>Concepto</th>
 
                   <th><center><b>Ver</b></center></th>
                   <th><center><b>Editar</b></center></th>
@@ -81,8 +81,9 @@
             <tfoot>
               <tr>
                 <th>Año</th>
-                <th>Concepto</th>
                 <th>Numero Partida</th>
+                <th>Concepto</th>
+                
                 <th><center><b>Ver</b></center></th>
                 <td><center><b>Editar</b></center></td>
                 <td><center><b>Borrar</b></center></td>

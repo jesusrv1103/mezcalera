@@ -47,12 +47,10 @@
               <thead>
                 <tr>
                   <th>Partida</th>
-                  <th>Concepto</th>
+                  <th>Concepto de Partida</th>
                   <th>Descripción del Producto</th>
                   <th>Existecia</th>
-                  
-                  <td><center><b>Editar</b></center></td>
-                  <td><center><b>Borrar</b></center></td>
+
 
                 </tr>
               </thead>
@@ -60,36 +58,28 @@
 
               <tbody>
                @foreach($inventarios as $inventario)
-              
+               <td>{{$inventario->numeroPartida}}</td>
+               <td>{{$inventario->concepto}}</td>
                <td>{{$inventario->nombre}}</td>
-               <td >{{$inventario->cantidad}}</td>
+               <td>{{$inventario->cantidad}}</td>
                
                
 
 
-               <td class="center">
-                 <a href="{{URL::action('InventarioController@edit',$inventario->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>
-               </td>
-               <td class="center">
-                <a class="btn btn-danger btn-sm" data-target="#modal-delete-{{$inventario->id}}" data-toggle="modal" style="margin-right: 10px;"  role="button"><i class="fa fa-eraser"></i></a>
-              </td>
+             </tr>
 
-            </tr>
-
-            @endforeach
-          </tbody>
-          <tfoot>
+             @endforeach
+           </tbody>
+           <tfoot>
             <tr>
 
               <th>Partida</th>
-              <th>Concepto</th>
+              <th>Concepto de Partida</th>
               <th>Descripción del Producto</th>
               <th>Existecia</th>
 
 
 
-              <td><center><b>Editar</b></center></td>
-              <td><center><b>Borrar</b></center></td>
 
             </tr>
           </tfoot>
