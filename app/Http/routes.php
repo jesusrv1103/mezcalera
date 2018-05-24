@@ -31,6 +31,8 @@ Route::resource('inventarios','InventarioController');
 
 Route::get('verPartidas/{id}','PartidaController@verPartidas')->name('partidas.verPartidas');
 
+Route::get('pdf','ArticulosController@pdf')->name('articulos.pdf');
+
 
 Route::get('crearPartidas2/{id}','Partida2Controller@create1')->name('partidas2.create1');
 

@@ -11,6 +11,7 @@ use Almacen\Http\Controllers\Controller;
 use Almacen\Articulos;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 class ArticulosController extends Controller
 {
@@ -129,5 +130,14 @@ class ArticulosController extends Controller
         $articulos->estado="Inactivo";
         $articulos->update();
         return Redirect::to('articulos');
+    }
+
+
+
+    public function pdf()
+    {
+
+        $pdf=PDF::loadView("articulo.invoice");
+        return $pdf->download("archivo.pdf");
     }
 }
