@@ -1,10 +1,10 @@
 <!doctype html>
 <h1>
-   
+
     <div>
 
 
-        
+
         <html lang="es">
     </h1>
 
@@ -23,7 +23,7 @@
     </head>
     <div class="container">
         <b>
-            
+
             <div class="col-md-12">
               <div class="btn-group pull-center">
                 <h2><i><ol>Calendario de Actividades de ADQUISINET
@@ -34,7 +34,7 @@
 
                 <div class="container">
                     <b>
-                        
+
                         <div class="col-md-12">
                           <div class="btn-group pull-center">
                               <div class="btn-group" style="margin-right: 10px;">
@@ -43,7 +43,7 @@
                             </div>
                             
                             <div class="btn-group" style="margin-right: 10px;">
-                                <a class="btn btn-default btn-warning tooltips" href="event2" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cancelar"> <i class="fa fa-refresh"></i> Cancelar </a>
+                            <a class="btn btn-default btn-warning tooltips" href="event2" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cancelar"> <i class="fa fa-refresh"></i> Salir </a>
 
                             </div>
                         </div>
@@ -59,10 +59,10 @@
 
 
 
-                           <i class="eye icon"></i> 
-                       </div>
+                         <i class="eye icon"></i> 
+                     </div>
 
-                       <div class="panel-body" >
+                     <div class="panel-body" >
 
                         {!! $calendar->calendar() !!}
 
