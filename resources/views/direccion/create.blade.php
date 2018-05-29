@@ -32,34 +32,34 @@
           </div>
         </div>
 
-            
+
 
         <div class="porlets-content">
           <form action="{{route('direcciones.store')}}" method="POST" class="form-horizontal row-border"  parsley-validate novalidate>
- {{csrf_field()}}
-      
+           {{csrf_field()}}
 
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Nombre Departamento<strog class="theme_color">*</strog></label>
-                <div class="col-sm-6">
 
-                 <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="nombre" id="nombre" 
-                 maxlength="40" required value="" placeholder="Ingrese el Nombre del Departamento">
-               </div>
-             </div><!--/form-group-->
-             
+           <div class="form-group">
+            <label class="col-sm-3 control-label">Nombre Departamento<strog class="theme_color">*</strog></label>
+            <div class="col-sm-6">
 
-             <div class="form-group">
-              <div class="col-sm-offset-7 col-sm-5">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-                <a href="{{route('direcciones.store')}}" class="btn btn-default"> Cancelar</a>
-              </div>
-            </div><!--/form-group-->
-          </form>
-        </div><!--/porlets-content-->
-      </div><!--/block-web-->
-    </div><!--/col-md-12-->
-  </div><!--/row-->
+             <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="nombre" id="nombre" 
+             maxlength="40" required value="" placeholder="Ingrese el Nombre del Departamento">
+           </div>
+         </div><!--/form-group-->
+
+
+         <div class="form-group">
+          <div class="col-sm-offset-7 col-sm-5">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="{{route('direcciones')}}" class="btn btn-default"> Cancelar</a>
+          </div>
+        </div><!--/form-group-->
+      </form>
+    </div><!--/porlets-content-->
+  </div><!--/block-web-->
+</div><!--/col-md-12-->
+</div><!--/row-->
 </div><!--/container clear_both padding_fix--> 
 
 @endsection

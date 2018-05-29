@@ -32,7 +32,7 @@
             </div>    
           </div>
         </div>
-       
+        
 
         <div class="porlets-content">
           <form action="{{url('direcciones',[$direcciones->id])}}" method="post" class="form-horizontal row-border" parsley-validate novalidate>
@@ -50,7 +50,7 @@
            <div class="form-group">
             <div class="col-sm-offset-7 col-sm-5">
               <button type="submit" class="btn btn-primary">Guardar</button>
-              <a href="{{route('direcciones.store')}}" class="btn btn-default"> Cancelar</a>
+              <a href="{{route('direcciones')}}" class="btn btn-default"> Cancelar</a>
             </div>
           </div><!--/form-group-->
         </form>

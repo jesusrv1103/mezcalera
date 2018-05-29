@@ -73,15 +73,15 @@
 
 
 
-           <div class="form-group">
-            <!-- autofocus name="nombre" id="nombre" -->
-            <label class="col-sm-3 control-label">Numero de Partida: <strog class="theme_color">*</strog></label>
-            <div class="col-sm-6">
-             <input onkeypress="return soloNumeros(event);" required value="" class="form-control"  name="numeroPartida" id="numeroPartida" autofocus name="cantidad" maxlength="5" placeholder="Ingrese el numero de partida">
-           </div>
-         </div><!--/form-group-->
+         <div class="form-group">
+          <!-- autofocus name="nombre" id="nombre" -->
+          <label class="col-sm-3 control-label">Numero de Partida: <strog class="theme_color">*</strog></label>
+          <div class="col-sm-6">
+           <input onkeypress="return soloNumeros(event);" required value="" class="form-control"  name="numeroPartida" id="numeroPartida" autofocus name="cantidad" maxlength="5" placeholder="Ingrese el numero de partida">
+         </div>
+       </div><!--/form-group-->
 
-        <div class="form-group">
+       <div class="form-group">
 
          <label class="col-sm-3 control-label">Concepto de Partida: <strog class="theme_color">*</strog></label>
          <div class="col-sm-6">
@@ -92,7 +92,7 @@
       <div class="form-group">
         <div class="col-sm-offset-7 col-sm-5">
           <button type="submit" class="btn btn-primary">Guardar</button>
-          <a href="{{route('partidas.store')}}" class="btn btn-default"> Cancelar</a>
+          <a href="{{route('partidas')}}" class="btn btn-default"> Cancelar</a>
         </div>
       </div><!--/form-group-->
     </form>

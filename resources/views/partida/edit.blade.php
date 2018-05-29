@@ -73,31 +73,31 @@
            </div>
          </div><!--/form-group-->
 
-           <div class="form-group">
-            <!-- autofocus name="nombre" id="nombre" -->
-            <label class="col-sm-3 control-label">Numero de Partida: <strog class="theme_color">*</strog></label>
-            <div class="col-sm-6">
-             <input onkeypress="return soloNumeros(event);" required value="{{$partidas->numeroPartida}}" class="form-control"  name="numeroPartida" id="numeroPartida" autofocus name="cantidad" maxlength="5" placeholder="Ingrese el nuemero de partida">
-           </div>
-         </div><!--/form-group-->
-
          <div class="form-group">
+          <!-- autofocus name="nombre" id="nombre" -->
+          <label class="col-sm-3 control-label">Numero de Partida: <strog class="theme_color">*</strog></label>
+          <div class="col-sm-6">
+           <input onkeypress="return soloNumeros(event);" required value="{{$partidas->numeroPartida}}" class="form-control"  name="numeroPartida" id="numeroPartida" autofocus name="cantidad" maxlength="5" placeholder="Ingrese el nuemero de partida">
+         </div>
+       </div><!--/form-group-->
 
-           <label class="col-sm-3 control-label">Concepto de Partida: <strog class="theme_color">*</strog></label>
-           <div class="col-sm-6">
-            <input name="concepto" id="concepto" onchange="mayus(this);" type="text" class="form-control" maxlength="90" required value="{{$partidas->concepto}}" placeholder="Ingrese Direccion del proveedor"/>
-          </div>
-        </div><!--/form-group-->
+       <div class="form-group">
 
-        <div class="form-group">
-          <div class="col-sm-offset-7 col-sm-5">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-            <a href="{{route('partidas.store')}}" class="btn btn-default"> Cancelar</a>
-          </div>
-        </div><!--/form-group-->
-      </form>
-    </div><!--/porlets-content-->
-  </div><!--/block-web-->
+         <label class="col-sm-3 control-label">Concepto de Partida: <strog class="theme_color">*</strog></label>
+         <div class="col-sm-6">
+          <input name="concepto" id="concepto" onchange="mayus(this);" type="text" class="form-control" maxlength="90" required value="{{$partidas->concepto}}" placeholder="Ingrese Direccion del proveedor"/>
+        </div>
+      </div><!--/form-group-->
+
+      <div class="form-group">
+        <div class="col-sm-offset-7 col-sm-5">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <a href="{{route('partidas')}}" class="btn btn-default"> Cancelar</a>
+        </div>
+      </div><!--/form-group-->
+    </form>
+  </div><!--/porlets-content-->
+</div><!--/block-web-->
 </div><!--/col-md-12-->
 </div><!--/row-->
 </div><!--/container clear_both padding_fix--> 

@@ -35,25 +35,25 @@
 
         <div class="porlets-content">
           <form action="{{route('almacenes.store')}}" method="POST" class="form-horizontal row-border"  parsley-validate novalidate>
- {{csrf_field()}}
-      
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Nombre Almacén<strog class="theme_color">*</strog></label>
-              <div class="col-sm-6">
-               <input onchange="mayus(this);" maxlength="45" autofocus name="nombre" id="nombre" class="form-control" required value="" placeholder="Ingrese el nombre de el Almacén" />
-             </div>
-           </div><!--/form-group-->
-
+           {{csrf_field()}}
+           
            <div class="form-group">
-            <div class="col-sm-offset-7 col-sm-5">
-              <button type="submit" class="btn btn-primary">Guardar</button>
-              <a href="{{route('almacenes.store')}}" class="btn btn-default"> Cancelar</a>
-            </div>
-          </div><!--/form-group-->
-        </form>
-      </div><!--/porlets-content-->
-    </div><!--/block-web-->
-  </div><!--/col-md-12-->
+            <label class="col-sm-3 control-label">Nombre Almacén<strog class="theme_color">*</strog></label>
+            <div class="col-sm-6">
+             <input onchange="mayus(this);" maxlength="45" autofocus name="nombre" id="nombre" class="form-control" required value="" placeholder="Ingrese el nombre de el Almacén" />
+           </div>
+         </div><!--/form-group-->
+
+         <div class="form-group">
+          <div class="col-sm-offset-7 col-sm-5">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="{{route('almacenes')}}" class="btn btn-default"> Cancelar</a>
+          </div>
+        </div><!--/form-group-->
+      </form>
+    </div><!--/porlets-content-->
+  </div><!--/block-web-->
+</div><!--/col-md-12-->
 </div><!--/row-->
 </div><!--/container clear_both padding_fix--> 
 

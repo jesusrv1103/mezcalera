@@ -27,6 +27,8 @@ class SolicitudController extends Controller
         return view('solicitud.index',['solicitudes' => $solicitudes]);
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -100,7 +102,7 @@ class SolicitudController extends Controller
 
         return view('solicitud.index1');
 
-    
+
     }
 
     /**

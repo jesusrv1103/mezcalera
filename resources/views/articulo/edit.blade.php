@@ -160,7 +160,7 @@
         <div class="form-group">
           <div class="col-sm-offset-7 col-sm-5">
             <button type="submit" class="btn btn-primary">Guardar</button>
-            <a href="{{route('articulos.store')}}" class="btn btn-default"> Cancelar</a>
+            <a href="{{route('articulos')}}" class="btn btn-default"> Cancelar</a>
           </div>
         </div><!--/form-group-->
       </form>

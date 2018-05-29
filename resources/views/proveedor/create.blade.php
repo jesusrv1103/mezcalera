@@ -39,7 +39,7 @@
            <div class="form-group">
             <label class="col-sm-3 control-label">Nombre Proveedor<strog class="theme_color">*</strog></label>
             <div class="col-sm-6">
-            <input name="nombre" id="nombre" onchange="mayus(this);" type="text" required value="" class="form-control" maxlength="50" placeholder="Ingrese el Nombre del Proveedor">
+              <input name="nombre" id="nombre" onchange="mayus(this);" type="text" required value="" class="form-control" maxlength="50" placeholder="Ingrese el Nombre del Proveedor">
             </div>
           </div><!--/form-group-->
 
@@ -64,7 +64,7 @@
         <div class="form-group">
           <div class="col-sm-offset-7 col-sm-5">
             <button type="submit" class="btn btn-primary">Guardar</button>
-            <a href="{{route('proveedores.store')}}" class="btn btn-default"> Cancelar</a>
+            <a href="{{route('proveedores')}}" class="btn btn-default"> Cancelar</a>
           </div>
         </div><!--/form-group-->
       </form>
