@@ -79,24 +79,24 @@
            </div>
          </div><!--/form-group-->
 
-          <div class="form-group">
-            <label class="col-sm-3 control-label">Tipo de Usuario:<strog class="theme_color">*</strog></label>
-            <div class="col-sm-6">
-              <select class="form-control" name="tipoUsuario" required id="ambito">
-               <option value="ADMINISTRADOR"> 
-                 ADMINISTRADOR          
-               </option>
-                <option value="ALMACENISTA"> 
-                 ALMACENISTA          
-               </option>
-               <option value="USUARIO REGULAR"> 
-                 USUARIO REGULAR           
-               </option>
-             </select>
-           </div>
-         </div><!--/form-group-->
+         <div class="form-group">
+          <label class="col-sm-3 control-label">Tipo de Usuario:<strog class="theme_color">*</strog></label>
+          <div class="col-sm-6">
+            <select class="form-control" name="tipoUsuario" required id="ambito">
+             <option value="ADMINISTRADOR"> 
+               ADMINISTRADOR          
+             </option>
+             <option value="ALMACENISTA"> 
+               ALMACENISTA          
+             </option>
+             <option value="USUARIO REGULAR"> 
+               USUARIO REGULAR           
+             </option>
+           </select>
+         </div>
+       </div><!--/form-group-->
 
-          <div class="form-group">
+       <div class="form-group">
         <label class="col-sm-3 control-label">Departamento<strog class="theme_color">*</strog></label>
         <div class="col-sm-6">
           <select name="idDireccion" class="form-control" required>
@@ -110,15 +110,15 @@
         </div>
       </div><!--/form-group-->
 
-         <div class="form-group">
-          <div class="col-sm-offset-7 col-sm-5">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-            <a href="{{route('usuarios.store')}}" class="btn btn-default"> Cancelar</a>
-          </div>
-        </div><!--/form-group-->
-      </form>
-    </div><!--/porlets-content-->
-  </div><!--/block-web-->
+      <div class="form-group">
+        <div class="col-sm-offset-7 col-sm-5">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <a href="{{url('/usuarios')}}" class="btn btn-default"> Cancelar</a>
+        </div>
+      </div><!--/form-group-->
+    </form>
+  </div><!--/porlets-content-->
+</div><!--/block-web-->
 </div><!--/col-md-12-->
 </div><!--/row-->
 </div><!--/container clear_both padding_fix--> 

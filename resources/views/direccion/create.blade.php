@@ -3,7 +3,7 @@
 <div class="pull-left breadcrumb_admin clear_both">
   <div class="pull-left page_title theme_color">
     <h1>Inicio</h1>
-    <h2 class="">Articulo</h2>
+    <h2 class="">Departamento</h2>
   </div>
   <div class="pull-right">
     <ol class="breadcrumb">
@@ -52,7 +52,7 @@
          <div class="form-group">
           <div class="col-sm-offset-7 col-sm-5">
             <button type="submit" class="btn btn-primary">Guardar</button>
-            <a href="{{route('direcciones')}}" class="btn btn-default"> Cancelar</a>
+            <a href="{{url('/direcciones')}}" class="btn btn-default"> Cancelar</a>
           </div>
         </div><!--/form-group-->
       </form>

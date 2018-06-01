@@ -33,9 +33,9 @@ class DireccionController extends Controller
      */
     public function create()
     {
-        
-        return view('direccion.create');
-    }
+
+      return view("direccion.create");
+  }
 
     /**
      * Store a newly created resource in storage.
@@ -71,8 +71,8 @@ class DireccionController extends Controller
      */
     public function edit($id)
     {
-         return view("direccion.edit",["direcciones"=>Direccion::findOrFail($id)]);
-    }
+     return view("direccion.edit",["direcciones"=>Direccion::findOrFail($id)]);
+ }
 
     /**
      * Update the specified resource in storage.
