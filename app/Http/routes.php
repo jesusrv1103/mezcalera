@@ -25,7 +25,7 @@ Route::resource('partidas2','Partida2Controller');
 Route::resource('reportes','ReporteController');
 Route::resource('events','EventController');
 Route::resource('solicitudes','SolicitudController');
-
+Route::resource('solicitudes1','Solicitud1Controller');
 
 Route::resource('inventarios','InventarioController');
 

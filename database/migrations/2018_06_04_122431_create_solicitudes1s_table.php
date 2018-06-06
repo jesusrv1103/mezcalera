@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSolicitudesTable extends Migration
+class CreateSolicitudes1sTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateSolicitudesTable extends Migration
      */
     public function up()
     {
-        Schema::create('solicitudes', function (Blueprint $table) {
+        Schema::create('solicitudes1s', function (Blueprint $table) {
             $table->increments('id');
             $table->string('numeroSolicitud');
             $table->string('fechaS');
@@ -21,7 +21,9 @@ class CreateSolicitudesTable extends Migration
             $table->string('estado');
             $table->timestamps();
         });
-    }
+
+
+}
 
     /**
      * Reverse the migrations.
@@ -30,6 +32,6 @@ class CreateSolicitudesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('solicitudes');
+        Schema::drop('solicitudes1s');
     }
 }
