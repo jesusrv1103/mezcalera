@@ -14,10 +14,10 @@ class ActualizarStockTrigger extends Migration
     {
         DB::unprepared('
 
-            CREATE TRIGGER tr_updStrockVenta AFTER INSERT ON salidasalmacenmaterial
+            CREATE TRIGGER tr_updStrockEntradas AFTER INSERT ON entradas
             FOR EACH ROW BEGIN
-            UPDATE almacenmateriales SET cantidad=cantidad-NEW.cantidad
-            WHERE almacenmateriales.id=NEW.id_material;
+            UPDATE articulos SET cantidad=cantidad+entradas.cantidad
+            WHERE articulos.id=NEW.entradas.id;
 
             END
 
