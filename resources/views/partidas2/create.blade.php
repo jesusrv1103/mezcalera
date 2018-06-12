@@ -93,7 +93,9 @@
        <div class="form-group">
         <div class="col-sm-offset-7 col-sm-5">
           <button type="submit" class="btn btn-primary">Guardar</button>
-          <a href="{{route('partidas')}}" class="btn btn-default"> Cancelar</a>
+          <a href="{{url('/partidas')}}" class="btn btn-default"> Cancelar</a>
+ 
+
         </div>
       </div><!--/form-group-->
     </form>

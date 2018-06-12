@@ -120,14 +120,14 @@
              </li>
 
 
-             <li> <a href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Articulos<span class="plus"><i class="fa fa-plus"></i></span> </a>
+             <li> <a href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Artículos<span class="plus"><i class="fa fa-plus"></i></span> </a>
 
                <ul >
-
-                 <li> <a href="{{url('articulos')}}"> <span>&nbsp;</span> <i class="fa fa-circle theme_color"></i> <b >Articulos</b> </a> </li>
-
+                <li> <a href="{{url('articulos')}}"> <span>&nbsp;</span> <i class="fa fa-circle theme_color"></i> <b >Artículos</b> </a> </li>
+               <li> <a href="{{url('inventarios')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Entrada de Artículos</b> </a> </li>
                  <li> <a href="{{url('proveedores')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b >Proveedores</b> </a> </li>
                  <li> <a href="{{url('inventarios')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Inventario</b> </a> </li>
+                 
                </ul>
              </li>
 
@@ -151,6 +151,7 @@
            <li > <a href="javascript:void(0);"> <i class="fa fa-envelope"></i> Solicitudes<span class="plus"><i class="fa fa-plus"></i></span> </a>
                <ul>
                 <li> <a href="{{url('solicitudes')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Recibidas</b> </a> </li>
+                
                 <li> <a href="{{url('solicitudes1')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Enviadas</b> </a> </li>
 
               </ul>

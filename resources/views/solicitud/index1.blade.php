@@ -27,69 +27,78 @@
               <div class="btn-group pull-right">
                 <b>
 
-                  <div class="btn-group" style="margin-right: 10px;">
-                    <a class="btn btn-sm btn-warning tooltips" href="{{URL::action('SolicitudController@pdf')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descargar Solicitud"> <i class="fa fa-download"></i> Descargar </a>
+                 <div class="btn-group" style="margin-right: 10px;">
+                 <a class="btn btn-sm btn-success tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Realizar la petición de la Solicitud"> <i class="fa fa-plus"></i> Aceptar </a>
 
-                  </div>
+                </div>
 
-                </b>
-              </div>
+
+                
+
+
+                <div class="btn-group" style="margin-right: 10px;">
+                  <a class="btn btn-sm btn-warning tooltips" href="{{URL::action('SolicitudController@pdf')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descargar Solicitud"> <i class="fa fa-download"></i> Descargar </a>
+
+                </div>
+
+              </b>
             </div>
           </div>
         </div>
+      </div>
 
 
-        <div class="porlets-content">
-          <div class="table-responsive">
-            <table  class="display table table-bordered table-striped" id="dynamic-table">
-              <thead>
-                <tr>
-                  <th>Cantidad Pedida</th>
-                  <th>Unidad de Medida</th>
-                  <th>Descripción</th>
-                  <th>Cantidad Asignada</th>
-                  
-                 
-
-                </tr>
-              </thead>
-              <tbody>
-
-               <tr class="gradeA">
-
-                <th>22</th>
-                <th>Pza</th>
-                <th>agua embotellada</th>
-                <th>21</th>
+      <div class="porlets-content">
+        <div class="table-responsive">
+          <table  class="display table table-bordered table-striped" id="dynamic-table">
+            <thead>
+              <tr>
+                <th>Cantidad Pedida</th>
+                <th>Unidad de Medida</th>
+                <th>Descripción</th>
+                <th>Cantidad Asignada</th>
 
 
-
-
-             
 
               </tr>
+            </thead>
+            <tbody>
+
+             <tr class="gradeA">
+
+              <th>22</th>
+              <th>Pza</th>
+              <th>agua embotellada</th>
+              <th>21</th>
 
 
 
-            </tbody>
-            <tfoot>
-              <tr>
-
-               <th>Cantidad Pedida</th>
-               <th>Unidad de Medida</th>
-               <th>Descripción</th>
-               <th>Cantidad Asignada</th>
 
 
-              
 
-             </tr>
-           </tfoot>
-         </table>
-       </div><!--/table-responsive-->
-     </div><!--/porlets-content-->
-   </div><!--/block-web-->
- </div><!--/col-md-12-->
+            </tr>
+
+
+
+          </tbody>
+          <tfoot>
+            <tr>
+
+             <th>Cantidad Pedida</th>
+             <th>Unidad de Medida</th>
+             <th>Descripción</th>
+             <th>Cantidad Asignada</th>
+
+
+
+
+           </tr>
+         </tfoot>
+       </table>
+     </div><!--/table-responsive-->
+   </div><!--/porlets-content-->
+ </div><!--/block-web-->
+</div><!--/col-md-12-->
 </div><!--/row-->
 
 

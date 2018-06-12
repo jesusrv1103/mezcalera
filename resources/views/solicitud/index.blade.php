@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-5">
               <div class="btn-group pull-right">
-               
+
               </div>
             </div>
           </div>
@@ -41,11 +41,12 @@
                   <th>Fecha</th>
                   <th>Nombre</th>
                   <th>Área o Dirección</th>
-                  
+                  <th>Uso Destinado</th>
                   
                   <td><center><b>Ver</b></center></td>
-                  <td><center><b>Enviar</b></center></td>
-     
+                 
+                  
+
 
                 </tr>
               </thead>
@@ -57,41 +58,41 @@
                 <td>{{$solicitud->fechaS}}</td>
                 <td>{{$solicitud->usuario}}</td>
                 <td>{{$solicitud->areaDireccion}}</td>
-                
+                 <td>junta</td>
 
                 <th class="center">
                   <a href="{{URL::action('SolicitudController@verSolicitudes')}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
                 </td>
 
-                <td class="center">
-                  <a href="" class="btn btn-success btn-sm" role="button"><i class="fa fa-check"></i></a> 
-                  </a>
-                </td>
+               
 
-              </tr>
-              @include('solicitud.modal')
-              @endforeach
+
+            </tr>
+            @include('solicitud.modal')
+            @endforeach
 
 
 
-            </tbody>
-            <tfoot>
-              <tr>
-               <th>No. Vale</th>
-                  <th>Fecha</th>
-                  <th>Nombre</th>
-                  <th>Área o Dirección</th>
+          </tbody>
+          <tfoot>
+            <tr>
+             <th>No. Vale</th>
+             <th>Fecha</th>
+             <th>Nombre</th>
+             <th>Área o Dirección</th>
+             <th>Uso Destinado</th>
 
-                <td><center><b>Ver</b></center></td>
-                <td><center><b>Enviar</b></center></td>
-                
-              </tr>
-            </tfoot>
-          </table>
-        </div><!--/table-responsive-->
-      </div><!--/porlets-content-->
-    </div><!--/block-web-->
-  </div><!--/col-md-12-->
+             <td><center><b>Ver</b></center></td>
+        
+             
+
+           </tr>
+         </tfoot>
+       </table>
+     </div><!--/table-responsive-->
+   </div><!--/porlets-content-->
+ </div><!--/block-web-->
+</div><!--/col-md-12-->
 </div><!--/row-->
 
 

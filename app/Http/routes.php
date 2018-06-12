@@ -43,7 +43,7 @@ Route::get('event2', 'EventController@index1');
 Route::get('verSolicitudes','SolicitudController@verSolicitudes')->name('solicitud.verSolicitudes');
 
 
-
+Route::get('pdf','SolicitudController@pdf')->name('solicitud.pdf');
 
 
 Route::get('adquisinet', function()

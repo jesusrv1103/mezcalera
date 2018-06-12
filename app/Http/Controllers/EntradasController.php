@@ -5,17 +5,9 @@ namespace Almacen\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Almacen\Http\Requests;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
-use Almacen\Solicitud;
-use DB;
-use Maatwebsite\Excel\Facades\Excel;
-use PDF;
 
-
-
-class SolicitudController extends Controller
+class EntradasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,11 +16,8 @@ class SolicitudController extends Controller
      */
     public function index()
     {
-        $solicitudes= DB::table('solicitudes')->where('estado','Activo')->get();
-        return view('solicitud.index',['solicitudes' => $solicitudes]);
+        //
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +26,7 @@ class SolicitudController extends Controller
      */
     public function create()
     {
-        return view('solicitud.create');
+        //
     }
 
     /**
@@ -48,14 +37,7 @@ class SolicitudController extends Controller
      */
     public function store(Request $request)
     {
-        $solicitudes= new Solicitud();
-        $solicitudes->numeroSolicitud=$request->get('numeroSolicitud');
-        $solicitudes->fechaS=$request->get('fechaS');
-        $solicitudes->areaDireccion=$request->get('areaDireccion');
-        $solicitudes->usuario=$request->get('usuario');
-        $solicitudes->estado='Activo';
-        $solicitudes->save();
-        return Redirect::to('solicitudes');
+        //
     }
 
     /**
@@ -89,21 +71,7 @@ class SolicitudController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $solicitudes=Solicitud::findOrFail($id);
-        $solicitudes->numeroSolicitud=$request->get('numeroSolicitud');
-        $solicitudes->fechaS=$request->get('fechaS');
-        $solicitudes->areaDireccion=$request->get('areaDireccion');
-        $solicitudes->usuario=$request->get('usuario');
-        $solicitudes->update();
-        return Redirect::to('solicitudes');
-    }
-
-    public function verSolicitudes ()
-    {
-
-        return view('solicitud.index1');
-
-
+        //
     }
 
     /**
@@ -115,11 +83,5 @@ class SolicitudController extends Controller
     public function destroy($id)
     {
         //
-    }
-     public function pdf()
-    {
-
-        $pdf=PDF::loadView("solicitud.invoice");
-        return $pdf->download("archivo.pdf");
     }
 }

@@ -100,7 +100,8 @@
          <div class="form-group">
           <label class="col-sm-3 control-label">Fecha Caducidad: <strog class="theme_color">*</strog></label>
           <div class="col-sm-6">
-            <input type="text" class="form-control mask" name="fechaCaducidad" required value="" data-inputmask="'alias': 'date'">
+            <input type="text" class="form-control mask" name="fechaCaducidad"
+            data-inputmask="'alias': 'date'">
           </div>
         </div><!--/form-group-->
 

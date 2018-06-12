@@ -29,7 +29,7 @@ class EventController extends Controller
                     null,
                     // Add color and link on event
                     [
-                    'color' => '#f05050',
+                    'color' => '#2E8935',
                     'url' => 'adquisinet',
                     ]
                     );
