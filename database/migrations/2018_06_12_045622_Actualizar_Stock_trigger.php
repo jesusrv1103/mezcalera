@@ -12,16 +12,7 @@ class ActualizarStockTrigger extends Migration
      */
     public function up()
     {
-        DB::unprepared('
-
-            CREATE TRIGGER tr_updStrockEntradas AFTER INSERT ON entradas
-            FOR EACH ROW BEGIN
-            UPDATE articulos SET cantidad=cantidad+entradas.cantidad
-            WHERE articulos.id=NEW.entradas.id;
-
-            END
-
-            ');
+      
 
     }
 

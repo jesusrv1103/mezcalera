@@ -124,7 +124,7 @@
 
                <ul >
                 <li> <a href="{{url('articulos')}}"> <span>&nbsp;</span> <i class="fa fa-circle theme_color"></i> <b >Artículos</b> </a> </li>
-               <li> <a href="{{url('inventarios')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Entrada de Artículos</b> </a> </li>
+               <li> <a href="{{url('entradas')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Entrada de Artículos</b> </a> </li>
                  <li> <a href="{{url('proveedores')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b >Proveedores</b> </a> </li>
                  <li> <a href="{{url('inventarios')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> <b>Inventario</b> </a> </li>
                  

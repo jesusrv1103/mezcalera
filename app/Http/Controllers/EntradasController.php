@@ -5,7 +5,13 @@ namespace Almacen\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Almacen\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
+use Almacen\Entradas;
+use DB;
+use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 class EntradasController extends Controller
 {
@@ -16,7 +22,8 @@ class EntradasController extends Controller
      */
     public function index()
     {
-        //
+        $entradas= DB::table('entradas')->get();
+        return view('entradas.index',['entradas' => $entradas]);
     }
 
     /**
@@ -26,7 +33,8 @@ class EntradasController extends Controller
      */
     public function create()
     {
-        //
+         return view('entradas.create');
+        
     }
 
     /**
@@ -37,7 +45,13 @@ class EntradasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $entradas= new Entradas();
+        $entradas->fechaEntrada=$request->get('fechaEntrada');
+        $entradas->idArticulos=$request->get('idArticulos');
+        $entradas->cantidad=$request->get('cantidad');
+        $entradas->fechaCaducidad=$request->get('fechaCaducidad');
+        $entradas->save();
+        return Redirect::to('entradas');
     }
 
     /**
