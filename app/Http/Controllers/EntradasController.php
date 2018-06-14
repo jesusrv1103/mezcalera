@@ -22,7 +22,10 @@ class EntradasController extends Controller
      */
     public function index()
     {
-        $entradas= DB::table('entradas')->get();
+         $entradas= DB::table('entradas')
+        ->join( 'entradas', 'articulos.id','=','entradas.idArticulos')
+        ->select('articulos.*','entradas.*')
+        ->get();
         return view('entradas.index',['entradas' => $entradas]);
     }
 

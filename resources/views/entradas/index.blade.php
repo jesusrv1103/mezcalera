@@ -56,12 +56,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                 @foreach($entradas as $entrada)
+                 @foreach($entradas as $entradas)
                  <tr class="gradeA">
-                  <td> {{$entrada->fechaEntrada}}</td>
-                  <td> {{$entrada->idArticulos}}</td>
-                  <td> {{$entrada->cantidad}}</td>
-                  <td> {{$entrada->fechaCaducidad}}</td>
+                  <td> {{$entradas->fechaEntrada}}</td>
+                  <td> {{$entradas->idArticulos}}</td>
+                  <td> {{$entradas->cantidad}}</td>
+                  <td> {{$entradas->fechaCaducidad}}</td>
 
               
                   <td class="center">
@@ -69,7 +69,7 @@
                   </td>
                   <td class="center">
                     <a class="btn btn-danger btn-sm" href="#modalEliminar" style="margin-right: 10px;"  
-                    data-target="#modal-delete-{{$almacen->id}}" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
+                    data-target="}"" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
                   </td>
 
                 </tr>
