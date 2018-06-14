@@ -23,8 +23,9 @@ class EntradasController extends Controller
     public function index()
     {
          $entradas= DB::table('entradas')
-        ->join( 'entradas', 'articulos.id','=','entradas.idArticulos')
-        ->select('articulos.*','entradas.*')
+        ->join( 'articulos', 'entradas.idArticulos','=','articulos.id')
+        ->select('articulos.nombre','entradas.*')
+    
         ->get();
         return view('entradas.index',['entradas' => $entradas]);
     }
