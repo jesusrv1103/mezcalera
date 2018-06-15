@@ -22,13 +22,13 @@ class EntradasController extends Controller
      */
     public function index()
     {
-         $entradas= DB::table('entradas')
-        ->join( 'articulos', 'entradas.idArticulos','=','articulos.id')
-        ->select('articulos.nombre','entradas.*')
-    
-        ->get();
-        return view('entradas.index',['entradas' => $entradas]);
-    }
+     $entradas= DB::table('entradas')
+     ->join( 'articulos', 'entradas.idArticulos','=','articulos.id')
+     ->select('articulos.nombre','entradas.*')
+
+     ->get();
+     return view('entradas.index',['entradas' => $entradas]);
+ }
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +37,11 @@ class EntradasController extends Controller
      */
     public function create()
     {
-         return view('entradas.create');
+
+        $articulos= DB::table('articulos')->where('estado','Activo')->get();
+        return view('entradas.create',['articulos' => $articulos]);
+    
+
         
     }
 
@@ -54,6 +58,7 @@ class EntradasController extends Controller
         $entradas->idArticulos=$request->get('idArticulos');
         $entradas->cantidad=$request->get('cantidad');
         $entradas->fechaCaducidad=$request->get('fechaCaducidad');
+        $entradas->estado='Activo';
         $entradas->save();
         return Redirect::to('entradas');
     }
@@ -77,7 +82,11 @@ class EntradasController extends Controller
      */
     public function edit($id)
     {
-        //
+         $entradas=Entradas::findOrFail($id);
+        $articulos=DB::table('articulos')
+        ->where('estado','=','Activo')
+        ->get();
+        return view('entradas.edit',['entradas'=>$entradas,'articulos'=>$articulos]);
     }
 
     /**
@@ -89,7 +98,15 @@ class EntradasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $entradas=Entradas::findOrFail($id);
+        $entradas->fechaEntrada=$request->get('fechaEntrada');
+        $entradas->idArticulos=$request->get('idArticulos');
+        $entradas->cantidad=$request->get('cantidad');
+        $entradas->fechaCaducidad=$request->get('fechaCaducidad');
+
+        $entradas->update();
+        return Redirect::to('entradas');
     }
 
     /**
@@ -100,6 +117,9 @@ class EntradasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $entradas=Entradas::findOrFail($id);
+        $entradas->estado="Inactivo";
+        $entradas->update();
+        return Redirect::to('entradas');
     }
 }

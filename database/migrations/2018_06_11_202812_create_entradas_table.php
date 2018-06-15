@@ -23,6 +23,7 @@ class CreateEntradasTable extends Migration
         
 
             $table->string('fechaCaducidad');
+            $table->string('estado');
             $table->timestamps();
         });
     }

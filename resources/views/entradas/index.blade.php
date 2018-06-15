@@ -56,20 +56,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                 @foreach($entradas as $entradas)
+                 @foreach($entradas as $entrada)
                  <tr class="gradeA">
-                  <td> {{$entradas->fechaEntrada}}</td>
-                  <td> {{$entradas->idArticulos}}</td>
-                  <td> {{$entradas->cantidad}}</td>
-                  <td> {{$entradas->fechaCaducidad}}</td>
+                  <td> {{$entrada->fechaEntrada}}</td>
+                  <td> {{$entrada->idArticulos}}</td>
+                  <td> {{$entrada->cantidad}}</td>
+                  <td> {{$entrada->fechaCaducidad}}</td>
 
               
                   <td class="center">
-                    <a href="" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    
+                    <a href="{{URL::action('EntradasController@edit',$entradas->id)}}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-edit"></i></a>                    
                   </td>
                   <td class="center">
                     <a class="btn btn-danger btn-sm" href="#modalEliminar" style="margin-right: 10px;"  
-                    data-target="}"" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
+                    data-target="#modal-delete-{{$entradas->id}}" data-toggle="modal" role="button"><i class="fa fa-eraser"></i></a></i></a>
                   </td>
 
                 </tr>
