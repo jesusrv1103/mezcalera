@@ -48,20 +48,19 @@
 
 
               <div class="form-group">
-              <label class="col-sm-3 control-label">Nombre del Artículo<strog class="theme_color">*</strog></label>
-                <div class="col-sm-6">
-                  <select name="" class="form-control" required>
-                    <option value="LIBRETAS"> 
-                 LIBRETAS         
-               </option>
-               <option value="HOJAS DE MAQUINA"> 
-                 HOJAS DE MAQUINA          
-               </option>
-                    
-                  </select>
-                  <div class="help-block with-errors"></div>
-                </div>
-              </div><!--/form-group-->
+            <label class="col-sm-3 control-label">Nombre del Artículo<strog class="theme_color">*</strog></label>
+            <div class="col-sm-6">
+              <select name="idArticulos" class="form-control" required>
+                @foreach($articulos as $articulos)
+                <option value="{{$articulos->id}}">
+                  {{$articulos->nombre}}
+                </option>
+                @endforeach
+              </select>
+              <div class="help-block with-errors"></div>
+            </div>
+          </div><!--/form-group-->
+
 
               
 
@@ -69,7 +68,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Cantidad artículo: <strog class="theme_color">*</strog></label>
                 <div class="col-sm-6">
-                 <input onkeypress="return soloNumeros(event);" required value="" type="text" class="form-control"  autofocus name="" maxlength="12" placeholder="Ingrese la cantidad del Articulo">
+                 <input onkeypress="return soloNumeros(event);" required value="cantidad" type="text" class="form-control"  autofocus name="" maxlength="12" placeholder="Ingrese la cantidad del Articulo">
                </div>
              </div><!--/form-group-->
 
@@ -77,7 +76,7 @@
              <div class="form-group">
               <label class="col-sm-3 control-label">Fecha de Caducidad: <strog class="theme_color">*</strog></label>
               <div class="col-sm-6">
-                <input type="text" class="form-control mask" name=""
+                <input type="text" class="form-control mask" name="fechaCaducidad"
                 data-inputmask="'alias': 'date'">
               </div>
             </div><!--/form-group-->

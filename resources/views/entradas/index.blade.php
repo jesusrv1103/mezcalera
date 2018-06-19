@@ -56,12 +56,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                 @foreach($entradas as $entrada)
+                 @foreach($entradas as $entradas)
                  <tr class="gradeA">
-                  <td> {{$entrada->fechaEntrada}}</td>
-                  <td> {{$entrada->idArticulos}}</td>
-                  <td> {{$entrada->cantidad}}</td>
-                  <td> {{$entrada->fechaCaducidad}}</td>
+                  <td> {{$entradas->fechaEntrada}}</td>
+                  <td> {{$entradas->idArticulos}}</td>
+                  <td> {{$entradas->cantidad}}</td>
+                  <td> {{$entradas->fechaCaducidad}}</td>
 
               
                   <td class="center">
