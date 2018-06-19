@@ -41,8 +41,8 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label">Fecha de Entrada del Artículo:<strog class="theme_color">*</strog></label>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control mask" name="fechaEntrada"
-                  data-inputmask="'alias': 'date'">
+                  <input type="text" class="form-control mask" name="fechaEntrada" 
+                   data-inputmask="'alias': 'date'">
                 </div>
               </div><!--/form-group-->
 

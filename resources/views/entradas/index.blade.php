@@ -59,7 +59,7 @@
                  @foreach($entradas as $entradas)
                  <tr class="gradeA">
                   <td> {{$entradas->fechaEntrada}}</td>
-                  <td> {{$entradas->idArticulos}}</td>
+                  <td> {{$entradas->nomArticulo}}</td>
                   <td> {{$entradas->cantidad}}</td>
                   <td> {{$entradas->fechaCaducidad}}</td>
 

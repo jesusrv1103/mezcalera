@@ -4,7 +4,7 @@ namespace Almacen;
 
 use Illuminate\Database\Eloquent\Model;
 
-class entradas extends Model
+class Entradas extends Model
 {
-    //
+    protected $table="entradas";
 }

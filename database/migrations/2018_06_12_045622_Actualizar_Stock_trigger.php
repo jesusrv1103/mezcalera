@@ -23,6 +23,9 @@ class ActualizarStockTrigger extends Migration
 
             ');
 
+
+      
+
     }
 
     /**
