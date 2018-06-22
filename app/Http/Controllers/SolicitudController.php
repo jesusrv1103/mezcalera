@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
 use Almacen\Solicitud;
+use Almacen\DetalleSolicitud;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 use PDF;
@@ -37,7 +38,11 @@ class SolicitudController extends Controller
      */
     public function create()
     {
-        return view('solicitud.create');
+        $usuarios= DB::table('usuarios')->where('estado','Activo')->get();
+        $direcciones= DB::table('direcciones')->where('estado','Activo')->get();
+
+        $productos= DB::table('articulos')->where('estado','Activo')->get();
+        return view('solicitud.create',['usuarios'=>$usuarios,'direcciones'=>$direcciones,'productos'=>$productos]);
     }
 
     /**
@@ -48,15 +53,38 @@ class SolicitudController extends Controller
      */
     public function store(Request $request)
     {
-        $solicitudes= new Solicitud();
-        $solicitudes->numeroSolicitud=$request->get('numeroSolicitud');
-        $solicitudes->fechaS=$request->get('fechaS');
-        $solicitudes->areaDireccion=$request->get('areaDireccion');
-        $solicitudes->usuario=$request->get('usuario');
-        $solicitudes->estado='Activo';
-        $solicitudes->save();
-        return Redirect::to('solicitudes');
+
+     DB::beginTransaction();
+     $solicitudes= new Solicitud();
+     $solicitudes->numeroSolicitud='11';
+     $solicitudes->fechaS='2012-11-11';
+     $solicitudes->areaDireccion=$request->get('idDireccion');
+     $solicitudes->usuario=$request->get('idUsuario');
+     $solicitudes->estado='Activo';
+     $solicitudes->save();
+     $idProducto= $request->get('idProducto');
+
+     $cantidad= $request->get('cantidad');
+
+
+     $cont = 0;
+     $idSolicitud=$solicitudes->id;
+     while($cont < count($idProducto))
+     {
+        $detalles= new DetalleSolicitud;
+        $detalles->idSolicitud=$idSolicitud;
+        $detalles->idArticulo=$idProducto[$cont];
+        $detalles->cantidad=$cantidad[$cont];
+        $detalles->estado='Activo';
+        $cont = $cont+1;
+        $detalles->save();
+
     }
+
+    DB::commit();
+
+    return Redirect::to('solicitudes');
+}
 
     /**
      * Display the specified resource.
@@ -116,7 +144,7 @@ class SolicitudController extends Controller
     {
         //
     }
-     public function pdf()
+    public function pdf()
     {
 
         $pdf=PDF::loadView("solicitud.invoice");

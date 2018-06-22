@@ -72,12 +72,6 @@
           </div><!--/form-group-->
 
 
-
-
-
-
-
-
           <div class="form-group">
             <label class="col-sm-3 control-label">Unidad de Medida:<strog class="theme_color">*</strog></label>
             <div class="col-sm-6">
