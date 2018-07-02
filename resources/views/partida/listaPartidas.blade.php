@@ -44,7 +44,7 @@
        @foreach($partidasMensuales as $partidames )
        <div class="col-lg-6"> 
         <section class="panel default blue_title h4">
-          <div class="panel-heading"><span class="semi-bold">{{$partidames->meses}}</span> 
+          <div class="panel-heading"><span class="semi-bold">{{$partidames->nombre_mes}}</span> 
           </div>
           <div class="panel-body">
 
@@ -62,6 +62,7 @@
                 <tr>
                   <th>Diferencia: </th>
                   <td>{{$partidames->presupuestoAsignado-$partidames->presupuestoGastado}}</td>
+                  {{$partidames->id}}
                 </tr>
                 
                 <tr>

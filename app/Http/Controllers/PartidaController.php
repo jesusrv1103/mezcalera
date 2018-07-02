@@ -117,7 +117,7 @@ class PartidaController extends Controller
         $partidasMensuales=DB::table('partidas2')
         ->join('partidas','partidas2.idPartida','=','partidas.id')
         ->join('meses','partidas2.idMes','=','meses.id')
-        ->select('partidas2.*','meses.meses')
+        ->select('partidas2.*','meses.nombre_mes')
         ->where('partidas.estado','=','Activo')
         ->where('partidas2.estado','=','Activo')
         ->where('idPartida','=',$idPartida)

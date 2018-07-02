@@ -64,62 +64,72 @@
               <label class="col-sm-3 control-label">Nombre de Usuario(s)<strog class="theme_color">*</strog></label>
               <div class="col-sm-6">
 
-               <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="nombreusuario" id="nombreusuario" 
-               maxlength="50" required value="" placeholder="Ingrese el nombre de Usuario">
+                <input  type="text" class="form-control"  autofocus name="nombreusuario" id="nombreusuario" 
+                maxlength="50" required value="" placeholder="Ingrese el nombre de Usuario">
+              </div>
+            </div><!--/form-group-->
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Contraseña: </label>
+              <div class="col-sm-6">
+                <input id="pass1" type="password" name ="contraseña" placeholder="Contraseña" required class="form-control">
+              </div>
+            </div><!--/form-group-->
+
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Repetir Contraseña</label>
+              <div class="col-sm-6">
+                <input parsley-equalto="#pass1" type="password" required placeholder="Contraseña" class="form-control">
+              </div>
+            </div><!--/form-group-->
+
+
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Tipo de Usuario:<strog class="theme_color">*</strog></label>
+              <div class="col-sm-6">
+                <select class="form-control" name="tipoUsuario" required id="ambito">
+                 <option value="ADMINISTRADOR"> 
+                   ADMINISTRADOR          
+                 </option>
+                 <option value="ALMACENISTA"> 
+                   ALMACENISTA          
+                 </option>
+                 <option value="USUARIO REGULAR"> 
+                   USUARIO REGULAR           
+                 </option>
+               </select>
              </div>
            </div><!--/form-group-->
 
 
+
            <div class="form-group">
-            <label class="col-sm-3 control-label">Contraseña<strog class="theme_color">*</strog></label>
+            <label class="col-sm-3 control-label">Departamento<strog class="theme_color">*</strog></label>
             <div class="col-sm-6">
+              <select name="idDireccion" class="form-control" required>
+                @foreach($direcciones as $direccion)
+                <option value="{{$direccion->id}}">
+                  {{$direccion->nombre}}
+                </option>
+                @endforeach
+              </select>
+              <div class="help-block with-errors"></div>
+            </div>
+          </div><!--/form-group-->
 
-             <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="contraseña" id="contraseña" 
-             maxlength="50" required value="" placeholder="Ingrese la Contraseña">
-           </div>
-         </div><!--/form-group-->
 
-         <div class="form-group">
-          <label class="col-sm-3 control-label">Tipo de Usuario:<strog class="theme_color">*</strog></label>
-          <div class="col-sm-6">
-            <select class="form-control" name="tipoUsuario" required id="ambito">
-             <option value="ADMINISTRADOR"> 
-               ADMINISTRADOR          
-             </option>
-             <option value="ALMACENISTA"> 
-               ALMACENISTA          
-             </option>
-             <option value="USUARIO REGULAR"> 
-               USUARIO REGULAR           
-             </option>
-           </select>
-         </div>
-       </div><!--/form-group-->
 
-       <div class="form-group">
-        <label class="col-sm-3 control-label">Departamento<strog class="theme_color">*</strog></label>
-        <div class="col-sm-6">
-          <select name="idDireccion" class="form-control" required>
-            @foreach($direcciones as $direccion)
-            <option value="{{$direccion->id}}">
-              {{$direccion->nombre}}
-            </option>
-            @endforeach
-          </select>
-          <div class="help-block with-errors"></div>
-        </div>
-      </div><!--/form-group-->
-
-      <div class="form-group">
-        <div class="col-sm-offset-7 col-sm-5">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <a href="{{url('/usuarios')}}" class="btn btn-default"> Cancelar</a>
-        </div>
-      </div><!--/form-group-->
-    </form>
-  </div><!--/porlets-content-->
-</div><!--/block-web-->
-</div><!--/col-md-12-->
+          <div class="form-group">
+            <div class="col-sm-offset-7 col-sm-5">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <a href="{{url('/usuarios')}}" class="btn btn-default"> Cancelar</a>
+            </div>
+          </div><!--/form-group-->
+        </form>
+      </div><!--/porlets-content-->
+    </div><!--/block-web-->
+  </div><!--/col-md-12-->
 </div><!--/row-->
 </div><!--/container clear_both padding_fix--> 
 @endsection

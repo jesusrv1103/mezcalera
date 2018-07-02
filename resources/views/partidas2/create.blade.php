@@ -46,10 +46,10 @@
               <select name="idMes" class="form-control" required>
                 @foreach($meses as $mes)
                 <option value="{{$mes->id}}">
-                  {{$mes->meses}}
+                {{$mes->nombre_mes}}
                 </option>
-              
-              
+
+
                 @endforeach
               </select>
               <div class="help-block with-errors"></div>
@@ -96,7 +96,7 @@
         <div class="col-sm-offset-7 col-sm-5">
           <button type="submit" class="btn btn-primary">Guardar</button>
           <a href="{{url('/partidas')}}" class="btn btn-default"> Cancelar</a>
- 
+
 
         </div>
       </div><!--/form-group-->

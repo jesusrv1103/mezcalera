@@ -45,7 +45,7 @@
               <thead>
                 <tr>
                   <th>Nombre</th>
-                  <th>Rfc</th>
+                  <th>RFC</th>
                   <th>Dirección</th>
 
                   <td><center><b>Editar</b></center></td>
@@ -77,7 +77,7 @@
             <tfoot>
               <tr>
                 <th>Nombre</th>
-                <th>Rfc</th>
+                <th>RFC</th>
                 <th>Dirección</th>
 
 

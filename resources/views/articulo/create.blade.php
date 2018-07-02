@@ -75,18 +75,15 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Unidad de Medida:<strog class="theme_color">*</strog></label>
             <div class="col-sm-6">
-              <select class="form-control" name="UnidadMedidad" required id="ambito">
-                <option value="CAJA"> 
-                 CAJA          
-               </option>
-               <option value="PAQUETE"> 
-                 PAQUETE           
-               </option>
+              <select class="form-control" name="UnidadMedidad" required >
 
-               <option value="PIEZA"> 
-                 PIEZA          
+                @foreach($unidades as $unidad)
+                <option value="{{$unidad->id}}"> 
+                 {{$unidad->nombre}}         
                </option>
+               @endforeach
              </select>
+             
            </div>
          </div><!--/form-group-->
 

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
 use Almacen\Articulos;
+use Almacen\UnidadMedida;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 use PDF;
@@ -22,13 +23,14 @@ class ArticulosController extends Controller
      */
     public function index()
     {
-     $articulos= DB::table('articulos')
-     ->join('almacenes as a', 'articulos.idAlmacen', '=', 'a.id')
-     ->join('partidas','articulos.idPartida','=','partidas.id')
-     ->select('articulos.*','partidas.numeroPartida','partidas.concepto','a.nombre as nomA')
-     ->where('articulos.estado','Activo')->get();
-     return view('articulo.index', ['articulos' => $articulos]);
- }
+       $articulos= DB::table('articulos')
+       ->join('almacenes as a', 'articulos.idAlmacen', '=', 'a.id')
+       ->join('unidad_de_medidas as u', 'articulos.idUnidad', '=', 'u.id')
+       ->join('partidas','articulos.idPartida','=','partidas.id')
+       ->select('articulos.*','partidas.numeroPartida','u.nombre as UnidadMedidad','partidas.concepto','a.nombre as nomA')
+       ->where('articulos.estado','Activo')->get();
+       return view('articulo.index', ['articulos' => $articulos]);
+   }
 
 
     /**
@@ -41,9 +43,12 @@ class ArticulosController extends Controller
         $almacenes=DB::table('almacenes')
         ->where('estado','=','Activo')
         ->get();
+
+        $unidades=DB::table('unidad_de_medidas')
+        ->get();
         $partidas= DB::table('partidas')
         ->where('estado','=','Activo')->get();
-        return view('articulo.create',['almacenes'=>$almacenes,'partidas'=>$partidas]);
+        return view('articulo.create',['almacenes'=>$almacenes,'partidas'=>$partidas,'unidades'=>$unidades]);
     }
 
     /**
@@ -58,7 +63,7 @@ class ArticulosController extends Controller
         $articulos->nombre=$request->get('nombre');
         $articulos->cantidad=$request->get('cantidad');
         $articulos->idAlmacen=$request->get('idAlmacen');
-        $articulos->UnidadMedidad=$request->get('UnidadMedidad');
+        $articulos->idUnidad=$request->get('UnidadMedidad');
         $articulos->fechaCaducidad=$request->get('fechaCaducidad');
         $articulos->tipoArticulo=$request->get('tipoArticulo');
         $articulos->idPartida=$request->get('idPartida');
@@ -109,7 +114,7 @@ class ArticulosController extends Controller
         $articulos->nombre=$request->get('nombre');
         $articulos->cantidad=$request->get('cantidad');
         $articulos->idAlmacen=$request->get('idAlmacen');
-        $articulos->UnidadMedidad=$request->get('UnidadMedidad');
+        $articulos->idUnidad=$request->get('UnidadMedidad');
         $articulos->fechaCaducidad=$request->get('fechaCaducidad');
         $articulos->tipoArticulo=$request->get('tipoArticulo');
         $articulos->idPartida=$request->get('idPartida');

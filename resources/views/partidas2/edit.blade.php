@@ -47,10 +47,17 @@
             <label class="col-sm-3 control-label">Meses<strog class="theme_color">*</strog></label>
             <div class="col-sm-4">
               <select name="idMes" class="form-control" required>
+
                 @foreach($meses as $mes)
-                <option value="{{$mes->id}}">
-                  {{$mes->meses}}
+                @if($mes->id== $partidas->idMes)
+                <option value="{{$mes->id}}" selected>
+                  {{$mes->nombre_mes}}
                 </option>
+                @else
+                <option value="{{$mes->id}}" >
+                  {{$mes->nombre_mes}}
+                </option>
+                @endif
                 @endforeach
               </select>
               <div class="help-block with-errors"></div>

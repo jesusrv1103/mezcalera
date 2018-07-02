@@ -98,7 +98,8 @@
         <div class="col-sm-2">
 
           <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="canti" id="cantidad" 
-          maxlength="70" required value="" placeholder="Cantidad">
+          maxlength="70" S value="" placeholder="Cantidad">
+          <span id="errorcantidad" style="color:#FF0000;"></span>
 
 
         </div>
@@ -181,26 +182,31 @@
 
     var cantidad = document.getElementById("cantidad").value;
 
-    var x = select.options[select.selectedIndex].text;
+    if(cantidad === ""){
 
-    var fila="<tr><td style=\"display:none;\"><input name=\"idProducto[]\" value=\""+idProducto+"\"></td><td >"+" <button type=\"button\"  onclick=\"myDeleteFunction(this)\" class=\"btn btn-danger btn-icon\"> Quitar<i class=\"fa fa-times\"></i> </button>"+"</td>"+ x +"<td>"+
-    "<input name=\"cantidad[]\" value=\""+cantidad+"\">"
-    +"</td>"+"<td></td>";
-    var btn = document.createElement("TR");
-    btn.innerHTML=fila;
-    document.getElementById("detalles").appendChild(btn);
+     document.getElementById("errorcantidad").innerHTML = "Por favor completa este campo";
+   }
+
+   var x = select.options[select.selectedIndex].text;
+
+   var fila="<tr><td style=\"display:none;\"><input name=\"idProducto[]\" value=\""+idProducto+"\"></td><td >"+" <button type=\"button\"  onclick=\"myDeleteFunction(this)\" class=\"btn btn-danger btn-icon\"> Quitar<i class=\"fa fa-times\"></i> </button>"+"</td>"+ x +"<td>"+
+   "<input name=\"cantidad[]\" value=\""+cantidad+"\">"
+   +"</td>"+"<td></td>";
+   var btn = document.createElement("TR");
+   btn.innerHTML=fila;
+   document.getElementById("detalles").appendChild(btn);
 
 
-  }
+ }
 
 
-  function myDeleteFunction(t) {
-    var td = t.parentNode;
-    var tr = td.parentNode;
-    var table = tr.parentNode;
-    table.removeChild(tr);
+ function myDeleteFunction(t) {
+  var td = t.parentNode;
+  var tr = td.parentNode;
+  var table = tr.parentNode;
+  table.removeChild(tr);
 
-  }
+}
 
 
 
