@@ -98,12 +98,12 @@
         <div class="col-sm-2">
 
           <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="canti" id="cantidad" 
-          maxlength="70" S value="" placeholder="Cantidad">
+          maxlength="70" S value="" placeholder="Cantidad" onblur="validarCantidad();" onkeypress="return soloNumeros(event);">
           <span id="errorcantidad" style="color:#FF0000;"></span>
 
 
         </div>
-        <button type="button"  onclick="myCreateFunction()" class="btn btn-success btn-icon"> Agregar <i class="fa fa-plus"></i> </button>
+        <button type="button"  onclick="myCreateFunction();" class="btn btn-success btn-icon"> Agregar <i class="fa fa-plus"></i> </button>
       </div><!--/form-group-->
 
 
@@ -182,33 +182,64 @@
 
     var cantidad = document.getElementById("cantidad").value;
 
-    if(cantidad === ""){
-
-     document.getElementById("errorcantidad").innerHTML = "Por favor completa este campo";
-   }
-
-   var x = select.options[select.selectedIndex].text;
-
-   var fila="<tr><td style=\"display:none;\"><input name=\"idProducto[]\" value=\""+idProducto+"\"></td><td >"+" <button type=\"button\"  onclick=\"myDeleteFunction(this)\" class=\"btn btn-danger btn-icon\"> Quitar<i class=\"fa fa-times\"></i> </button>"+"</td>"+ x +"<td>"+
-   "<input name=\"cantidad[]\" value=\""+cantidad+"\">"
-   +"</td>"+"<td></td>";
-   var btn = document.createElement("TR");
-   btn.innerHTML=fila;
-   document.getElementById("detalles").appendChild(btn);
+    var route = "http://10.221.50.10:8000//tipoUnidad/"+idProducto;
 
 
- }
+
+    if(cantidad <= 0){
+
+      document.getElementById("errorcantidad").innerHTML= "La cantidad deve ser mayor  a cero ";
+
+    } else {
+      document.getElementById("errorcantidad").innerHTML= "";
+
+      var x = select.options[select.selectedIndex].text;
 
 
- function myDeleteFunction(t) {
-  var td = t.parentNode;
-  var tr = td.parentNode;
-  var table = tr.parentNode;
-  table.removeChild(tr);
+      $.get(route,function(res){
+        $(res).each(function(key,value){
+          alert(value.nombre);
 
-}
+          var fila="<tr><td style=\"display:none;\"><input name=\"idProducto[]\" readonly style=\"border:none\" value=\""+idProducto+"\"></td><td >"+" <button type=\"button\"  onclick=\"myDeleteFunction(this)\" class=\"btn btn-danger btn-icon\"> Quitar<i class=\"fa fa-times\"></i> </button>"+"</td>"+ x +"<td>"+
+          "<input name=\"cantidad[]\" readonly value=\""+cantidad+"\">"
+          +"</td>"+"<td>"+value.unidad+"</td>";
+          var btn = document.createElement("TR");
+          btn.innerHTML=fila;
+          document.getElementById("detalles").appendChild(btn);
+
+        });
+      });
 
 
+    }
+
+
+
+
+
+  }
+
+
+  function myDeleteFunction(t) {
+    var td = t.parentNode;
+    var tr = td.parentNode;
+    var table = tr.parentNode;
+    table.removeChild(tr);
+
+  }
+  function  validarCantidad(){
+
+    var cantidad = document.getElementById("cantidad").value;
+
+    if(cantidad <= 0){
+
+      document.getElementById("errorcantidad").innerHTML= "La cantidad deve ser mayor  a cero ";
+
+    } else {
+      document.getElementById("errorcantidad").innerHTML= "";
+    }
+
+  }
 
 </script>
 
