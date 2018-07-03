@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\Input;
 use Almacen\Http\Controllers\Controller;
 use Almacen\Solicitud;
 use Almacen\DetalleSolicitud;
+use Almacen\Articulos;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 use PDF;
+
+use Illuminate\Http\Resources\Json\Resource;
+
 
 
 
@@ -150,4 +154,20 @@ class SolicitudController extends Controller
         $pdf=PDF::loadView("solicitud.invoice");
         return $pdf->download("archivo.pdf");
     }
+
+
+    public function tipoUnidad($id)
+    {
+
+        $tipoEmpaque=  Articulos::join('unidad_de_medidas as u','articulos.idUnidad','=','u.id')
+        ->select('articulos.*', 'u.nombre as unidad')
+        ->where('articulos.id','=',$id)
+        ->get();
+        return response()->json(
+            $tipoEmpaque->toArray());
+
+    }
+
+
+
 }
