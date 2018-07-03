@@ -47,7 +47,7 @@
                   <th>Nombre Completo</th>
                   <th>Apellido</th>
                   <th>Nombre Usuario</th>
-                  <th>Contraseña</th>
+          
                   <th>Tipo de Usuario</th>
                   <th>Dirección</th>
                   <td><center><b>Editar</b></center></td>
@@ -61,7 +61,7 @@
                 <td>{{$usuarios->nombreCompleto}}</td>
                 <td>{{$usuarios->apellido}}</td>
                 <td>{{$usuarios->nombreusuario}}</td>
-                <td>{{$usuarios->contraseña}}</td>
+    
                 <td>{{$usuarios->tipoUsuario}}</td>
                 <td>{{$usuarios->nombre}}</td>
 
@@ -81,7 +81,7 @@
                 <th>Nombre Completo</th>
                 <th>Apellido</th>
                 <th>Nombre Usuario</th>
-                <th>Contraseña</th>
+
                 <th>Tipo de Usuario</th>
                 <th>Dirección</th>
                 <td><center><b>Editar</b></center></td>

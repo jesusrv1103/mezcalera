@@ -78,62 +78,68 @@
 
 
          <div class="form-group">
-          <label class="col-sm-3 control-label">Contraseña<strog class="theme_color">*</strog></label>
+          <label class="col-sm-3 control-label">Contraseña: </label>
           <div class="col-sm-6">
+            <input id="pass1" type="password" name ="contraseña" placeholder="Contraseña" required value="{{$usuarios->contraseña}}"  required class="form-control">
+          </div>
+        </div><!--/form-group-->
 
-           <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="contraseña" id="contrasena" 
-           maxlength="50" required value="{{$usuarios->contraseña}}" placeholder="Ingrese la Contraseña">
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Repetir Contraseña</label>
+          <div class="col-sm-6">
+          <input parsley-equalto="#pass1" type="password" required value="{{$usuarios->contraseña}}" required placeholder="Contraseña" class="form-control">
+          </div>
+        </div><!--/form-group-->
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Tipo de Usuario:<strog class="theme_color">*</strog></label>
+          <div class="col-sm-6">
+            <select class="form-control" name="tipoUsuario" required id="ambito">
+             <option value="ADMINISTRADOR"> 
+               ADMINISTRADOR          
+             </option>
+             <option value="ALMACENISTA"> 
+               ALMACENISTA          
+             </option>
+             <option value="USUARIO REGULAR"> 
+               USUARIO REGULAR           
+             </option>
+           </select>
          </div>
        </div><!--/form-group-->
 
+
        <div class="form-group">
-        <label class="col-sm-3 control-label">Tipo de Usuario:<strog class="theme_color">*</strog></label>
+        <label class="col-sm-3 control-label">Departamento<strog class="theme_color">*</strog></label>
         <div class="col-sm-6">
-          <select class="form-control" name="tipoUsuario" required id="ambito">
-           <option value="ADMINISTRADOR"> 
-             ADMINISTRADOR          
-           </option>
-           <option value="ALMACENISTA"> 
-             ALMACENISTA          
-           </option>
-           <option value="USUARIO REGULAR"> 
-             USUARIO REGULAR           
-           </option>
-         </select>
-       </div>
-     </div><!--/form-group-->
-
-
-     <div class="form-group">
-      <label class="col-sm-3 control-label">Departamento<strog class="theme_color">*</strog></label>
-      <div class="col-sm-6">
-        <select name="idDireccion" class="form-control" required>
-          @foreach($direcciones as $direccion)
-          @if($usuarios->idDireccion==$direccion->id)
-          <option value="{{$direccion->id}}">
-            {{$direccion->nombre}}
-          </option>
-          @else
-          <option value="{{$direccion->id}}">
-            {{$direccion->nombre}}
-          </option>
-          @endif
-          @endforeach
-        </select>
-        <div class="help-block with-errors"></div>
-      </div>
-    </div><!--/form-group-->
+          <select name="idDireccion" class="form-control" required>
+            @foreach($direcciones as $direccion)
+            @if($usuarios->idDireccion==$direccion->id)
+            <option value="{{$direccion->id}}">
+              {{$direccion->nombre}}
+            </option>
+            @else
+            <option value="{{$direccion->id}}">
+              {{$direccion->nombre}}
+            </option>
+            @endif
+            @endforeach
+          </select>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div><!--/form-group-->
 
 
 
-    <div class="form-group">
-      <div class="col-sm-offset-7 col-sm-5">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{{url('/usuarios')}}" class="btn btn-default"> Cancelar</a>
-      </div>
-    </div><!--/form-group-->
-  </form>
-</div><!--/porlets-content-->
+      <div class="form-group">
+        <div class="col-sm-offset-7 col-sm-5">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <a href="{{url('/usuarios')}}" class="btn btn-default"> Cancelar</a>
+        </div>
+      </div><!--/form-group-->
+    </form>
+  </div><!--/porlets-content-->
 </div><!--/block-web-->
 </div><!--/col-md-12-->
 </div><!--/row-->
