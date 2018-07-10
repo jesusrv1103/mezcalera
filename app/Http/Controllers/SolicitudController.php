@@ -137,23 +137,22 @@ class SolicitudController extends Controller
         return Redirect::to('solicitudes');
     }
 
-    public function verSolicitudes ()
+    public function verSolicitudes($id)
     {
 
-$solicitudes=Solicitud::findOrFail($id);
+        $solicitudes=Solicitud::findOrFail($id);
         $idSolicitud=$solicitudes->id;
 
-        $verSolicitud=DB::table('solicitudes')
-        ->join('solicitudes','solicitudes.idSolicitud','=','solicitudes.id')
-        ->join('articulos','solicitudes.idArticulo','=','articulos.id')
-        ->select('solicitudes.*','articulos.nombre_articulo')
+        $verSolicitud=DB::table('detalle_solicitud')
+        ->join('articulos','detalle_solicitud.idArticulo','=','articulos.id')
+        ->select('detalle_solicitud.*','articulos.nombre')
         ->where('articulos.estado','=','Activo')
         ->where('idSolicitud','=',$idSolicitud)
         ->get();
-        return view('solicitudes.verSolicitudes',["solicitudes"=>$solicitudes,"verSolicitud"=>$verSolicitud]);   
+        return view('solicitud.verSolicitudes',["solicitudes"=>$solicitudes,"verSolicitud"=>$verSolicitud]);   
 
 
-   }
+    }
 
     /**
      * Remove the specified resource from storage.
