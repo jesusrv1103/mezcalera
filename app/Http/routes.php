@@ -34,18 +34,13 @@ Route::get('verPartidas/{id}','PartidaController@verPartidas')->name('partidas.v
 
 Route::get('pdf','ArticulosController@pdf')->name('articulos.pdf');
 
-
 Route::get('crearPartidas2/{id}','Partida2Controller@create1')->name('partidas2.create1');
 
 Route::get('event2', 'EventController@index1');
 
-
-
 Route::get('verSolicitudes','SolicitudController@verSolicitudes')->name('solicitud.verSolicitudes');
 
-
 Route::get('pdf','SolicitudController@pdf')->name('solicitud.pdf');
-
 
 Route::get('adquisinet', function()
 {

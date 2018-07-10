@@ -140,7 +140,17 @@ class SolicitudController extends Controller
     public function verSolicitudes ()
     {
 
+$solicitudes=Solicitud::findOrFail($id);
+        $idSolicitud=$solicitudes->id;
 
+        $verSolicitud=DB::table('solicitudes')
+        ->join('solicitudes','solicitudes.idSolicitud','=','solicitudes.id')
+        ->join('articulos','solicitudes.idArticulo','=','articulos.id')
+        ->select('solicitudes.*','articulos.nombre_articulo')
+        ->where('articulos.estado','=','Activo')
+        ->where('idSolicitud','=',$idSolicitud)
+        ->get();
+        return view('solicitudes.verSolicitudes',["solicitudes"=>$solicitudes,"verSolicitud"=>$verSolicitud]);   
 
 
    }
