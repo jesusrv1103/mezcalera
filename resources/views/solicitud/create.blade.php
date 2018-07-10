@@ -71,7 +71,7 @@
           <label class="col-sm-3 control-label">Uso destinado:<strog class="theme_color">*</strog></label>
           <div class="col-sm-6">
 
-           <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="destino" id="nombre" 
+           <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="UsoDestinado" id="UsoDestinado" 
            maxlength="70" required value="" placeholder="Atencion  a empresarios  y publico  en reuniones">
          </div>
        </div><!--/form-group-->
@@ -182,7 +182,7 @@
 
     var cantidad = document.getElementById("cantidad").value;
 
-    var route = "http://10.221.50.10:8000//tipoUnidad/"+idProducto;
+    var route = "http://localhost:8000//tipoUnidad/"+idProducto;
 
 
 

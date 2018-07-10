@@ -16,14 +16,21 @@ class CreateSolicitudes1sTable extends Migration
             $table->increments('id');
             $table->string('numeroSolicitud');
             $table->string('fechaS');
-            $table->string('usuario');
-            $table->string('areaDireccion');
+
+            $table->integer('idUsuario')->unsigned();
+            $table->foreign('idUsuario')->references('id')->on('usuarios');
+
+            $table->integer('idDireccion')->unsigned();
+            $table->foreign('idDireccion')->references('id')->on('direcciones');
+
+            $table->string('UsoDestinado');
+
             $table->string('estado');
             $table->timestamps();
         });
 
 
-}
+    }
 
     /**
      * Reverse the migrations.

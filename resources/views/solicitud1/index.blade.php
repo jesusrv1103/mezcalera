@@ -66,6 +66,7 @@
                 <td>{{$solicitud->fechaS}}</td>
                 <td>{{$solicitud->usuario}}</td>
                 <td>{{$solicitud->areaDireccion}}</td>
+                <td>{{$solicitud->UsoDestinado}}</td>
                 
 
                 <th class="center">

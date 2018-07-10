@@ -81,8 +81,9 @@ class Solicitud1Controller extends Controller
         $solicitudes1s=Solicitud1::findOrFail($id);
        $solicitudes1s->numeroSolicitud=$request->get('numeroSolicitud');
        $solicitudes1s->fechaS=$request->get('fechaS');
-       $solicitudes1s->areaDireccion=$request->get('areaDireccion');
-       $solicitudes1s->usuario=$request->get('usuario');
+       $solicitudes1s->idDireccion=$request->get('idUsuario');
+       $solicitudes1s->usuario=$request->get('idDireccion');
+       $solicitudes1s->UsoDestinado=$request->get('UsoDestinado');
        $solicitudes1s->update();
        return Redirect::to('solicitudes1s');
    }

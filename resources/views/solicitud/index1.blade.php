@@ -28,15 +28,15 @@
                 <b>
 
                  <div class="btn-group" style="margin-right: 10px;">
-                 <a class="btn btn-sm btn-success tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Realizar la petición de la Solicitud"> <i class="fa fa-plus"></i> Aceptar </a>
+                   <a class="btn btn-sm btn-success tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Realizar la petición de la Solicitud"> <i class="fa fa-plus"></i> Aceptar </a>
 
-                </div>
-
-
-                
+                 </div>
 
 
-                <div class="btn-group" style="margin-right: 10px;">
+
+
+
+                 <div class="btn-group" style="margin-right: 10px;">
                   <a class="btn btn-sm btn-warning tooltips" href="{{URL::action('SolicitudController@pdf')}}" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Descargar Solicitud"> <i class="fa fa-download"></i> Descargar </a>
 
                 </div>
@@ -53,9 +53,9 @@
           <table  class="display table table-bordered table-striped" id="dynamic-table">
             <thead>
               <tr>
-                <th>Cantidad Pedida</th>
+                <th>Nombre de  Artículo</th>
+                <th>Cantidad pedida</th>
                 <th>Unidad de Medida</th>
-                <th>Descripción</th>
                 <th>Cantidad Asignada</th>
 
 
@@ -64,40 +64,50 @@
             </thead>
             <tbody>
 
+
+
+             @foreach($solicitudes as $solicitud)
              <tr class="gradeA">
 
-              <th>22</th>
-              <th>Pza</th>
-              <th>agua embotellada</th>
-              <th>21</th>
+               <td>aa</td>
+               <td>a</td>
+               <td>so</td>
+               <td>li</td>
+               
 
-
+               
+               <th class="center">
+                <a href="{{URL::action('SolicitudController@verSolicitudes')}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
+              </td>
 
 
 
 
             </tr>
+            @include('solicitud.modal')
+            @endforeach
+
 
 
 
           </tbody>
           <tfoot>
             <tr>
-
-             <th>Cantidad Pedida</th>
-             <th>Unidad de Medida</th>
-             <th>Descripción</th>
-             <th>Cantidad Asignada</th>
-
+              <th>Nombre de  Artículo</th>
+              <th>Cantidad pedida</th>
+              <th>Unidad de Medida</th>
+              <th>Cantidad Asignada</th>
 
 
 
-           </tr>
-         </tfoot>
-       </table>
-     </div><!--/table-responsive-->
-   </div><!--/porlets-content-->
- </div><!--/block-web-->
+
+
+            </tr>
+          </tfoot>
+        </table>
+      </div><!--/table-responsive-->
+    </div><!--/porlets-content-->
+  </div><!--/block-web-->
 </div><!--/col-md-12-->
 </div><!--/row-->
 

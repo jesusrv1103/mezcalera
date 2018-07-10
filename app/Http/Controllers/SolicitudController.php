@@ -29,7 +29,12 @@ class SolicitudController extends Controller
      */
     public function index()
     {
-        $solicitudes= DB::table('solicitudes')->where('estado','Activo')->get();
+        $solicitudes= DB::table('solicitudes')
+        ->join('usuarios as u', 'solicitudes.idUsuario', '=', 'u.id')
+        ->join('direcciones as d', 'solicitudes.idDireccion', '=', 'd.id')
+        ->select('solicitudes.*','u.nombreCompleto','solicitudes.*','d.nombre')
+
+        ->where('solicitudes.estado','Activo')->get();
         return view('solicitud.index',['solicitudes' => $solicitudes]);
     }
 
@@ -62,8 +67,9 @@ class SolicitudController extends Controller
      $solicitudes= new Solicitud();
      $solicitudes->numeroSolicitud='11';
      $solicitudes->fechaS='2012-11-11';
-     $solicitudes->areaDireccion=$request->get('idDireccion');
-     $solicitudes->usuario=$request->get('idUsuario');
+     $solicitudes->idUsuario=$request->get('idUsuario');
+     $solicitudes->idDireccion=$request->get('idDireccion');
+     $solicitudes->UsoDestinado=$request->get('UsoDestinado');
      $solicitudes->estado='Activo';
      $solicitudes->save();
      $idProducto= $request->get('idProducto');
@@ -124,8 +130,9 @@ class SolicitudController extends Controller
         $solicitudes=Solicitud::findOrFail($id);
         $solicitudes->numeroSolicitud=$request->get('numeroSolicitud');
         $solicitudes->fechaS=$request->get('fechaS');
-        $solicitudes->areaDireccion=$request->get('areaDireccion');
-        $solicitudes->usuario=$request->get('usuario');
+        $solicitudes->idUsuario=$request->get('idUsuario');
+        $solicitudes->idDireccion=$request->get('idDireccion');
+        $solicitudes->UsoDestinado=$request->get('UsoDestinado');
         $solicitudes->update();
         return Redirect::to('solicitudes');
     }
@@ -133,10 +140,10 @@ class SolicitudController extends Controller
     public function verSolicitudes ()
     {
 
-        return view('solicitud.index1');
 
 
-    }
+
+   }
 
     /**
      * Remove the specified resource from storage.

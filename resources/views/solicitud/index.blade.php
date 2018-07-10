@@ -44,7 +44,7 @@
                   <th>Uso Destinado</th>
                   
                   <td><center><b>Ver</b></center></td>
-                 
+
                   
 
 
@@ -56,43 +56,44 @@
 
                 <td>{{$solicitud->numeroSolicitud}}</td>
                 <td>{{$solicitud->fechaS}}</td>
-                <td>{{$solicitud->usuario}}</td>
-                <td>{{$solicitud->areaDireccion}}</td>
-                 <td>junta</td>
+                <td>{{$solicitud->nombreCompleto}}</td>
+                <td>{{$solicitud->nombre}}</td>
+                <td>{{$solicitud->UsoDestinado}}</td>
+            
 
                 <th class="center">
                   <a href="{{URL::action('SolicitudController@verSolicitudes')}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
                 </td>
 
-               
-
-
-            </tr>
-            @include('solicitud.modal')
-            @endforeach
 
 
 
-          </tbody>
-          <tfoot>
-            <tr>
-             <th>No. Vale</th>
-             <th>Fecha</th>
-             <th>Nombre</th>
-             <th>Área o Dirección</th>
-             <th>Uso Destinado</th>
+              </tr>
+              @include('solicitud.modal')
+              @endforeach
 
-             <td><center><b>Ver</b></center></td>
-        
-             
 
-           </tr>
-         </tfoot>
-       </table>
-     </div><!--/table-responsive-->
-   </div><!--/porlets-content-->
- </div><!--/block-web-->
-</div><!--/col-md-12-->
+
+            </tbody>
+            <tfoot>
+              <tr>
+               <th>No. Vale</th>
+               <th>Fecha</th>
+               <th>Nombre</th>
+               <th>Área o Dirección</th>
+               <th>Uso Destinado</th>
+
+               <td><center><b>Ver</b></center></td>
+
+
+
+             </tr>
+           </tfoot>
+         </table>
+       </div><!--/table-responsive-->
+     </div><!--/porlets-content-->
+   </div><!--/block-web-->
+ </div><!--/col-md-12-->
 </div><!--/row-->
 
 
