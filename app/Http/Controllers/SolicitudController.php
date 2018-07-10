@@ -63,24 +63,24 @@ class SolicitudController extends Controller
     public function store(Request $request)
     {
 
-     DB::beginTransaction();
-     $solicitudes= new Solicitud();
-     $solicitudes->numeroSolicitud='11';
-     $solicitudes->fechaS='2012-11-11';
-     $solicitudes->idUsuario=$request->get('idUsuario');
-     $solicitudes->idDireccion=$request->get('idDireccion');
-     $solicitudes->UsoDestinado=$request->get('UsoDestinado');
-     $solicitudes->estado='Activo';
-     $solicitudes->save();
-     $idProducto= $request->get('idProducto');
+       DB::beginTransaction();
+       $solicitudes= new Solicitud();
+       $solicitudes->numeroSolicitud='11';
+       $solicitudes->fechaS='2012-11-11';
+       $solicitudes->idUsuario=$request->get('idUsuario');
+       $solicitudes->idDireccion=$request->get('idDireccion');
+       $solicitudes->UsoDestinado=$request->get('UsoDestinado');
+       $solicitudes->estado='Activo';
+       $solicitudes->save();
+       $idProducto= $request->get('idProducto');
 
-     $cantidad= $request->get('cantidad');
+       $cantidad= $request->get('cantidad');
 
 
-     $cont = 0;
-     $idSolicitud=$solicitudes->id;
-     while($cont < count($idProducto))
-     {
+       $cont = 0;
+       $idSolicitud=$solicitudes->id;
+       while($cont < count($idProducto))
+       {
         $detalles= new DetalleSolicitud;
         $detalles->idSolicitud=$idSolicitud;
         $detalles->idArticulo=$idProducto[$cont];
@@ -137,10 +137,10 @@ class SolicitudController extends Controller
         return Redirect::to('solicitudes');
     }
 
-    public function verSolicitudes ()
+    public function verSolicitudes ($id)
     {
 
-$solicitudes=Solicitud::findOrFail($id);
+        $solicitudes=Solicitud::findOrFail($id);
         $idSolicitud=$solicitudes->id;
 
         $verSolicitud=DB::table('solicitudes')
@@ -153,7 +153,7 @@ $solicitudes=Solicitud::findOrFail($id);
         return view('solicitudes.verSolicitudes',["solicitudes"=>$solicitudes,"verSolicitud"=>$verSolicitud]);   
 
 
-   }
+    }
 
     /**
      * Remove the specified resource from storage.
