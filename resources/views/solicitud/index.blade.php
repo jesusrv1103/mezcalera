@@ -46,7 +46,7 @@
                   <td><center><b>Ver</b></center></td>
 
                   
-
+                  <td></td>
 
                 </tr>
               </thead>
@@ -59,14 +59,15 @@
                 <td>{{$solicitud->nombreCompleto}}</td>
                 <td>{{$solicitud->nombre}}</td>
                 <td>{{$solicitud->UsoDestinado}}</td>
-            
+
 
                 <th class="center">
                   <a href="{{URL::action('SolicitudController@verSolicitudes',$solicitud->id)}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
                 </td>
 
 
-
+                <td>      <a href="{{URL::action('SolicitudController@pdf',$solicitud->id)}}" class="btn btn-warning btn-sm" role="button"><i class="fa fa-download"></i></a>
+                </center></td>
 
               </tr>
               @include('solicitud.modal')
@@ -84,6 +85,7 @@
                <th>Uso Destinado</th>
 
                <td><center><b>Ver</b></center></td>
+               <td></td>
 
 
 

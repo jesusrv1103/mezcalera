@@ -168,25 +168,38 @@ class SolicitudController extends Controller
     {
         //
     }
-    public function pdf()
+    public function pdf($id)
     {
 
-        $pdf=PDF::loadView("solicitud.invoice");
-        return $pdf->download("archivo.pdf");
-    }
+     $solicitudes=Solicitud::findOrFail($id);
+     $idSolicitud=$solicitudes->id;
+
+     $verSolicitud=DB::table('detalle_solicitud')
+     ->join('articulos','detalle_solicitud.idArticulo','=','articulos.id')
+     ->select('detalle_solicitud.*','articulos.nombre','articulos.idUnidad')
+     ->where('articulos.estado','=','Activo')
+     ->where('idSolicitud','=',$idSolicitud)
+     ->get();
+     $pdf=PDF::loadView("solicitud.invoice",['solicitudes'=>$solicitudes, "verSolicitud"=>$verSolicitud]);
+     return $pdf->download("archivo.pdf");
+ }
 
 
-    public function tipoUnidad($id)
-    {
 
-        $tipoEmpaque=  Articulos::join('unidad_de_medidas as u','articulos.idUnidad','=','u.id')
-        ->select('articulos.*', 'u.nombre as unidad')
-        ->where('articulos.id','=',$id)
-        ->get();
-        return response()->json(
-            $tipoEmpaque->toArray());
 
-    }
+
+    
+ public function tipoUnidad($id)
+ {
+
+    $tipoEmpaque=  Articulos::join('unidad_de_medidas as u','articulos.idUnidad','=','u.id')
+    ->select('articulos.*', 'u.nombre as unidad')
+    ->where('articulos.id','=',$id)
+    ->get();
+    return response()->json(
+        $tipoEmpaque->toArray());
+
+}
 
 
 

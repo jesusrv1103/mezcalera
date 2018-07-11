@@ -34,49 +34,16 @@
 				<th >Concepto</th>
 
 			</tr>
-			
+			@foreach($verSolicitud as $articulo)
 			<tr>
-				<td style="text-align:center;">1</td>
+
+				<td style="text-align:center;">{{$articulo->nombre}}</td>
 				<td>PIEZA</td>
-				<td>MARCA TEXTO COLOR VERDE</td>
+				<td>{{$articulo->cantidad}}</td>
 				<td>2111</td>
 				<td>MATERIALES Y UTILES DE OFICINA</td>
 			</tr>
-			<tr>
-				<td style="text-align:center;">2</td>
-				<td>CAJA</td>
-				<td>PLUMA PUNTO FINO TINTA NEGRA</td>
-				<td>2111</td>
-				<td>MATERIALES Y UTILES DE OFICINA</td>
-			</tr>
-			<tr>
-				<td style="text-align:center;">1</td>
-				<td>PIEZA</td>
-				<td>MARCA TEXTO COLOR VERDE</td>
-				<td>2111</td>
-				<td>MATERIALES Y UTILES DE OFICINA</td>
-			</tr>
-			<tr>
-				<td style="text-align:center;">2</td>
-				<td>CAJA</td>
-				<td>PLUMA PUNTO FINO TINTA NEGRA</td>
-				<td>2111</td>
-				<td>MATERIALES Y UTILES DE OFICINA</td>
-			</tr>
-			<tr>
-				<td style="text-align:center;">1</td>
-				<td>PIEZA</td>
-				<td>MARCA TEXTO COLOR VERDE</td>
-				<td>2111</td>
-				<td>MATERIALES Y UTILES DE OFICINA</td>
-			</tr>
-			<tr>
-				<td style="text-align:center;">2</td>
-				<td>CAJA</td>
-				<td>PLUMA PUNTO FINO TINTA NEGRA</td>
-				<td>2111</td>
-				<td>MATERIALES Y UTILES DE OFICINA</td>
-			</tr>
+			@endforeach
 		</table>
 	</body>
 	</html>
