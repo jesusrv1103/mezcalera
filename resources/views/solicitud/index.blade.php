@@ -62,7 +62,7 @@
             
 
                 <th class="center">
-                  <a href="{{URL::action('SolicitudController@verSolicitudes')}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
+                  <a href="{{URL::action('SolicitudController@verSolicitudes',$solicitud->id)}}" class="btn btn-info btn-sm" role="button"><i class="fa fa-eye"></i></a>   
                 </td>
 
 

@@ -97,7 +97,7 @@
         <label class="col-sm-3 control-label">Cantidad:<strog class="theme_color">*</strog></label>
         <div class="col-sm-2">
 
-          <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="canti" id="cantidad" 
+          <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="cantidad" id="cantidad" 
           maxlength="70" S value="" placeholder="Cantidad" onblur="validarCantidad();" onkeypress="return soloNumeros(event);">
           <span id="errorcantidad" style="color:#FF0000;"></span>
 
@@ -182,7 +182,7 @@
 
     var cantidad = document.getElementById("cantidad").value;
 
-    var route = "http://localhost:8000//tipoUnidad/"+idProducto;
+    var route = "http://localhost:8000/tipoUnidad/"+idProducto;
 
 
 

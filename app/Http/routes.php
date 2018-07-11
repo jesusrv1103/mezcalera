@@ -38,7 +38,7 @@ Route::get('crearPartidas2/{id}','Partida2Controller@create1')->name('partidas2.
 
 Route::get('event2', 'EventController@index1');
 
-Route::get('verSolicitudes','SolicitudController@verSolicitudes')->name('solicitud.verSolicitudes');
+Route::get('verSolicitudes/{id}','SolicitudController@verSolicitudes')->name('solicitud.verSolicitudes');
 
 Route::get('pdf','SolicitudController@pdf')->name('solicitud.pdf');
 
