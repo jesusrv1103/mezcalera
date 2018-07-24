@@ -42,6 +42,8 @@ Route::get('verSolicitudes/{id}','SolicitudController@verSolicitudes')->name('so
 
 Route::get('pdf/{id}','SolicitudController@pdf')->name('solicitud.pdf');
 
+Route::get('pdf','InventarioController@pdf')->name('inventario.pdf');
+
 Route::get('adquisinet', function()
 {
 	return redirect()->away('http://adquisinet.sazacatecas.gob.mx/index.php

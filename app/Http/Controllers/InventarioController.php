@@ -12,7 +12,7 @@ use Almacen\Http\Controllers\Controller;
 use Almacen\Inventarios;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
-
+use PDF;
 class InventarioController extends Controller
 {
     /**
@@ -40,6 +40,20 @@ class InventarioController extends Controller
     {
         //
     }
+
+    public function pdf()
+    {
+
+     $inventarios= DB::table('articulos')
+     ->join('almacenes as a', 'articulos.idAlmacen', '=', 'a.id')
+     ->join('partidas','articulos.idPartida','=','partidas.id')
+     ->select('articulos.id','articulos.nombre','articulos.cantidad','partidas.numeroPartida','partidas.concepto','a.nombre as nomA')
+     ->where('articulos.estado','Activo')->get();
+     $pdf=PDF::loadView("inventario.invoice",['inventarios'=>$inventarios]);
+     return $pdf->download("inventario.pdf");
+ }
+
+
 
     /**
      * Store a newly created resource in storage.
