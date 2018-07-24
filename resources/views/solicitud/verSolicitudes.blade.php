@@ -21,10 +21,21 @@
 					<div class="row" style="margin-top: 15px; margin-bottom: 12px;">
 						<div class="col-sm-7">
 							<div class="actions"> </div>
-							<h2 class="content-header theme_color" style="margin-top: -5px;">&nbsp;&nbsp;</h2>
+							<h2 class="content-header theme_color" style="margin-top: -5px;">&nbsp;&nbsp;Proveer Petición de solicitud</h2>
 						</div>
 						<div class="col-md-5">
 							<div class="btn-group pull-right">
+
+                <b>
+
+                  <div class="btn-group" style="margin-right: 10px;">
+                    <a class="btn btn-sm btn-warning tooltips" href="" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nuevo Artículo"> <i class="fa fa-download"></i> Descargar </a>
+
+              
+
+                  </div>
+
+                </b>
 
 							</div>
 						</div>

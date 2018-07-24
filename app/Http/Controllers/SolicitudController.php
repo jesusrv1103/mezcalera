@@ -133,7 +133,7 @@ class SolicitudController extends Controller
         $solicitudes->idUsuario=$request->get('idUsuario');
         $solicitudes->idDireccion=$request->get('idDireccion');
         $solicitudes->UsoDestinado=$request->get('UsoDestinado');
-        $solicitudes->update();
+        $solicitudes->update(); 
         return Redirect::to('solicitudes');
     }
 

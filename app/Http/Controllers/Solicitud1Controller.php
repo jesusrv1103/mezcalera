@@ -1,10 +1,6 @@
 <?php
-
 namespace Almacen\Http\Controllers;
-
-
 use Illuminate\Http\Request;
-
 use Almacen\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
@@ -12,7 +8,6 @@ use Almacen\Http\Controllers\Controller;
 use Almacen\Solicitud1;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
-
 class Solicitud1Controller extends Controller
 {
     /**
@@ -25,7 +20,6 @@ class Solicitud1Controller extends Controller
         $solicitudes1s= DB::table('solicitudes1s')->where('estado','Activo')->get();
         return view('solicitud1.index',['solicitudes1s' => $solicitudes1s]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -35,7 +29,6 @@ class Solicitud1Controller extends Controller
     {
         return view('solicitud1.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -46,7 +39,6 @@ class Solicitud1Controller extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -57,7 +49,6 @@ class Solicitud1Controller extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -68,7 +59,6 @@ class Solicitud1Controller extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -87,7 +77,6 @@ class Solicitud1Controller extends Controller
        $solicitudes1s->update();
        return Redirect::to('solicitudes1s');
    }
-
     /**
      * Remove the specified resource from storage.
      *

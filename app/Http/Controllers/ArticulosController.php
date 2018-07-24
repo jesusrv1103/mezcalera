@@ -23,14 +23,14 @@ class ArticulosController extends Controller
      */
     public function index()
     {
-       $articulos= DB::table('articulos')
-       ->join('almacenes as a', 'articulos.idAlmacen', '=', 'a.id')
-       ->join('unidad_de_medidas as u', 'articulos.idUnidad', '=', 'u.id')
-       ->join('partidas','articulos.idPartida','=','partidas.id')
-       ->select('articulos.*','partidas.numeroPartida','u.nombre as UnidadMedidad','partidas.concepto','a.nombre as nomA')
-       ->where('articulos.estado','Activo')->get();
-       return view('articulo.index', ['articulos' => $articulos]);
-   }
+     $articulos= DB::table('articulos')
+     ->join('almacenes as a', 'articulos.idAlmacen', '=', 'a.id')
+     ->join('unidad_de_medidas as u', 'articulos.idUnidad', '=', 'u.id')
+     ->join('partidas','articulos.idPartida','=','partidas.id')
+     ->select('articulos.*','partidas.numeroPartida','u.nombre as UnidadMedidad','partidas.concepto','a.nombre as nomA')
+     ->where('articulos.estado','Activo')->get();
+     return view('articulo.index', ['articulos' => $articulos]);
+ }
 
 
     /**
@@ -98,7 +98,9 @@ class ArticulosController extends Controller
         ->get();
         $partidas= DB::table('partidas')
         ->where('estado','=','Activo')->get();
-        return view('articulo.edit',['articulos'=>$articulos,'almacenes'=>$almacenes,'partidas'=>$partidas]);
+        $unidades=DB::table('unidad_de_medidas')
+        ->get();
+        return view('articulo.edit',['articulos'=>$articulos,'almacenes'=>$almacenes,'partidas'=>$partidas,'unidades'=>$unidades]);
     }
 
     /**

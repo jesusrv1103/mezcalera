@@ -182,7 +182,7 @@
 
     var cantidad = document.getElementById("cantidad").value;
 
-    var route = "http://192.168.1.77:8000/tipoUnidad/"+idProducto;
+    var route = "http://localhost:8000/tipoUnidad/"+idProducto;
 
 
 
