@@ -56,9 +56,9 @@
 					@foreach($verSolicitud as $articulo)
 					<tr>
 						<td style="padding-left: 4px;">{{$articulo->cantidad}}</td>
-						<td style="padding-left: 4px;">PIEZA</td>
+						<td style="padding-left: 4px;">{{$articulo->idUnidad}}</td>
 						<td style="padding-left: 4px;">{{$articulo->nombre}}</td>
-						<td style="padding-left: 4px;">2111</td>
+						<td style="padding-left: 4px;">222</td>
 						<td style="padding-left: 4px;">MATERIALES Y UTILES DE OFICINA</td>
 					</tr>
 					@endforeach
