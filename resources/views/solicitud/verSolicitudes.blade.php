@@ -66,7 +66,7 @@
 
 									<td>{{$solicitud->nombre}}</td>
 									<td>{{$solicitud->cantidad}}</td>
-									<td>{{$solicitud->idUnidad}}</td>
+									<td>{{$solicitud->unidad}}</td>
 									<td>2</td>
 
 

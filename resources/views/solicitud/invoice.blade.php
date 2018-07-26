@@ -25,10 +25,10 @@
 				<strong>Entrega de Requisición</strong></font></center></p>
 				<br>
 				<br>
-				<strong>Fecha:</strong> <laberl ><input name="fecha" type="text" id="fecha" value="<?php echo date("m/d/Y"); ?>" size="10" /></label>  
+				<strong>Fecha:</strong> <label >{{date("m/d/Y")}}</label>  
 				<br>
 				<br>
-				<strong>No Vale:</strong> 420
+				<strong>No Vale:</strong> {{$solicitudes->id}}
 				<br>
 				<br>
 				<strong>Nombre:</strong> NOEMY DOLORES DE LA TORRE BELMONTES
@@ -37,7 +37,7 @@
 				<strong>Area:</strong> VINCULACIÓN EDUCATIVA
 				<br>
 				<br>
-				<strong>Uso Destinado:</strong> PARA USO DE LA DIRECCIÓN
+				<strong>Uso Destinado:</strong> {{$solicitudes->UsoDestinado}}
 				<br>
 				<br>
 				<br>
@@ -56,7 +56,7 @@
 					@foreach($verSolicitud as $articulo)
 					<tr>
 						<td style="padding-left: 4px;">{{$articulo->cantidad}}</td>
-						<td style="padding-left: 4px;">{{$articulo->idUnidad}}</td>
+						<td style="padding-left: 4px;">{{$articulo->unidad}}</td>
 						<td style="padding-left: 4px;">{{$articulo->nombre}}</td>
 						<td style="padding-left: 4px;">222</td>
 						<td style="padding-left: 4px;">MATERIALES Y UTILES DE OFICINA</td>

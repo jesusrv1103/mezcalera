@@ -17,6 +17,9 @@ use PDF;
 
 use Illuminate\Http\Resources\Json\Resource;
 
+use Illuminate\Database\Eloquent\Model;
+
+
 
 
 
@@ -63,24 +66,24 @@ class SolicitudController extends Controller
     public function store(Request $request)
     {
 
-       DB::beginTransaction();
-       $solicitudes= new Solicitud();
-       $solicitudes->numeroSolicitud='11';
-       $solicitudes->fechaS='2012-11-11';
-       $solicitudes->idUsuario=$request->get('idUsuario');
-       $solicitudes->idDireccion=$request->get('idDireccion');
-       $solicitudes->UsoDestinado=$request->get('UsoDestinado');
-       $solicitudes->estado='Activo';
-       $solicitudes->save();
-       $idProducto= $request->get('idProducto');
+     DB::beginTransaction();
+     $solicitudes= new Solicitud();
+     $solicitudes->numeroSolicitud='11';
+     $solicitudes->fechaS='2012-11-11';
+     $solicitudes->idUsuario=$request->get('idUsuario');
+     $solicitudes->idDireccion=$request->get('idDireccion');
+     $solicitudes->UsoDestinado=$request->get('UsoDestinado');
+     $solicitudes->estado='Activo';
+     $solicitudes->save();
+     $idProducto= $request->get('idProducto');
 
-       $cantidad= $request->get('cantidad');
+     $cantidad= $request->get('cantidad');
 
 
-       $cont = 0;
-       $idSolicitud=$solicitudes->id;
-       while($cont < count($idProducto))
-       {
+     $cont = 0;
+     $idSolicitud=$solicitudes->id;
+     while($cont < count($idProducto))
+     {
         $detalles= new DetalleSolicitud;
         $detalles->idSolicitud=$idSolicitud;
         $detalles->idArticulo=$idProducto[$cont];
@@ -138,8 +141,6 @@ class SolicitudController extends Controller
     }
 
 
-
-
     public function verSolicitudes($id)
 
     {
@@ -150,13 +151,14 @@ class SolicitudController extends Controller
         $verSolicitud=DB::table('detalle_solicitud')
         ->join('articulos','detalle_solicitud.idArticulo','=','articulos.id')
         ->select('detalle_solicitud.*','articulos.nombre','articulos.idUnidad')
+        ->join('unidad_de_medidas','unidad_de_medidas.id','=','articulos.id')
+        ->select('detalle_solicitud.*','articulos.nombre','unidad_de_medidas.nombre as unidad')
         ->where('articulos.estado','=','Activo')
         ->where('idSolicitud','=',$idSolicitud)
         ->get();
         return view('solicitud.verSolicitudes',["solicitudes"=>$solicitudes,"verSolicitud"=>$verSolicitud]);   
-
-
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -171,26 +173,28 @@ class SolicitudController extends Controller
     public function pdf($id)
     {
 
-     $solicitudes=Solicitud::findOrFail($id);
-     $idSolicitud=$solicitudes->id;
+       $solicitudes=Solicitud::findOrFail($id);
+       $idSolicitud=$solicitudes->id;
 
-     $verSolicitud=DB::table('detalle_solicitud')
-     ->join('articulos','detalle_solicitud.idArticulo','=','articulos.id')
-     ->select('detalle_solicitud.*','articulos.nombre','articulos.idUnidad')
-     ->where('articulos.estado','=','Activo')
-     ->where('idSolicitud','=',$idSolicitud)
-     ->get();
-     $pdf=PDF::loadView("solicitud.invoice",['solicitudes'=>$solicitudes, "verSolicitud"=>$verSolicitud]);
-     return $pdf->download("archivo.pdf");
- }
+       $verSolicitud=DB::table('detalle_solicitud')
+       ->join('articulos','detalle_solicitud.idArticulo','=','articulos.id')
+       ->select('detalle_solicitud.*','articulos.nombre','articulos.idUnidad')
+       ->join('unidad_de_medidas','unidad_de_medidas.id','=','articulos.id')
+       ->select('detalle_solicitud.*','articulos.nombre','unidad_de_medidas.nombre as unidad')
+       ->where('articulos.estado','=','Activo')
+       ->where('idSolicitud','=',$idSolicitud)
+       ->get();
+       $pdf=PDF::loadView("solicitud.invoice",['solicitudes'=>$solicitudes, "verSolicitud"=>$verSolicitud]);
+       return $pdf->download("archivo.pdf");
+   }
 
 
 
 
 
-    
- public function tipoUnidad($id)
- {
+
+   public function tipoUnidad($id)
+   {
 
     $tipoEmpaque=  Articulos::join('unidad_de_medidas as u','articulos.idUnidad','=','u.id')
     ->select('articulos.*', 'u.nombre as unidad')
