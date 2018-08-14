@@ -123,7 +123,7 @@
 
             <tbody>
 
-            </tbody>
+            </tbody id="detalles">
 
             <tfoot style="background-color:#A9D0F5">
              <th>Opciones</th>
@@ -154,7 +154,7 @@
 
     </div>
 
-
+    <div id="loco"></div>
 
     <div class="form-group">
       <div class="col-sm-offset-7 col-sm-5">
@@ -181,65 +181,118 @@
     var idProducto= select.value;
 
     var cantidad = document.getElementById("cantidad").value;
-
     var route = "http://localhost:8000/tipoUnidad/"+idProducto;
 
 
 
-    if(cantidad <= 0){
-
-      document.getElementById("errorcantidad").innerHTML= "La cantidad deve ser mayor  a cero ";
-
-    } else {
-      document.getElementById("errorcantidad").innerHTML= "";
-
-      var x = select.options[select.selectedIndex].text;
+    if(!resultado(idProducto)){
 
 
       $.get(route,function(res){
-        $(res).each(function(key,value){
-          alert(value.nombre);
 
-          var fila="<tr><td style=\"display:none;\"><input name=\"idProducto[]\" readonly style=\"border:none\" value=\""+idProducto+"\"></td><td >"+" <button type=\"button\"  onclick=\"myDeleteFunction(this)\" class=\"btn btn-danger btn-icon\"> Quitar<i class=\"fa fa-times\"></i> </button>"+"</td>"+ x +"<td>"+
-          "<input name=\"cantidad[]\" readonly value=\""+cantidad+"\">"
-          +"</td>"+"<td>"+value.unidad+"</td>";
-          var btn = document.createElement("TR");
-          btn.innerHTML=fila;
-          document.getElementById("detalles").appendChild(btn);
+        if(cantidad <= 0  ){
 
-        });
-      });
+          document.getElementById("errorcantidad").innerHTML= "La cantidad deve ser mayor  a cero ";
 
+        } else if  (res[0].cantidad < cantidad){
+         document.getElementById("errorcantidad").innerHTML= "La cantidad no puede ser mayor ala existente en almacen.";
+       }  else {
+        document.getElementById("errorcantidad").innerHTML= "";
+
+        var x = select.options[select.selectedIndex].text;
+
+        var fila="<tr><td style=\"display:none;\"><input name=\"idProducto[]\"  readonly style=\"border:none\" value=\""+idProducto+"\"></td>"+
+        "<td >"+" <button type=\"button\"  onclick=\"myDeleteFunction(this)\" class=\"btn btn-danger btn-icon\"> Quitar<i class=\"fa fa-times\"></i> </button>"+"</td>"+ x 
+        +"<td>"+  "<input name=\"cantidad[]\" readonly value=\""+cantidad+"\">"
+        +"</td>"
+        +"<td>"+res[0].unidad+"</td>";
+        var btn = document.createElement("TR");
+        btn.innerHTML=fila;
+        document.getElementById("detalles").appendChild(btn);
+
+
+        document.getElementById("total").value=suma();
+
+      }
+
+    });
 
     }
-
-
-
-
-
-  }
-
-
-  function myDeleteFunction(t) {
-    var td = t.parentNode;
-    var tr = td.parentNode;
-    var table = tr.parentNode;
-    table.removeChild(tr);
-
-  }
-  function  validarCantidad(){
-
-    var cantidad = document.getElementById("cantidad").value;
-
-    if(cantidad <= 0){
-
-      document.getElementById("errorcantidad").innerHTML= "La cantidad deve ser mayor  a cero ";
-
-    } else {
-      document.getElementById("errorcantidad").innerHTML= "";
+    else {
+      alert("producto ya existe");
     }
 
   }
+
+  function resultado(idProducto){
+    var filas = $("#detalles").find("tr"); //devulve las filas del body de tu tabla segun el ejemplo que brindaste
+    var resultado = false;
+    for(i=2; i<filas.length; i++){ 
+
+    var celdas = $(filas[i]).find("td"); //devolverá las celdas de una fila
+    id = $($(celdas[0]).children("input")[0]).val();
+
+    if(idProducto== id){
+      resultado =true;
+      break;
+    }else {
+      resultado =false;
+    }
+
+  }
+
+  return resultado;
+}
+
+function suma(){
+ var filas = $("#detalles").find("tr"); //devulve las filas del body de tu tabla segun el ejemplo que brindaste
+ var resultado = parseInt(0);
+ for(i=2; i<filas.length; i++){ 
+
+    var celdas = $(filas[i]).find("td"); //devolverá las celdas de una fila
+    valor = parseInt($($(celdas[2]).children("input")[0]).val());
+    resultado+= valor;  
+
+  }
+
+  return resultado;
+
+}
+
+
+function eliminarFila($id){
+
+  var $id=   document.getElementById("detalles").value;
+  document.getElementById("detalles").removeChild($id);
+
+}
+
+
+function myDeleteFunction(t) {
+  var td = t.parentNode;
+  var tr = td.parentNode;
+  var table = tr.parentNode;
+  table.removeChild(tr);
+  
+  document.getElementById("total").value=suma();
+
+}
+function  validarCantidad(){
+
+  var cantidad = document.getElementById("cantidad").value;
+
+  if(cantidad <= 0){
+
+    document.getElementById("errorcantidad").innerHTML= "La cantidad deve ser mayor  a cero ";
+
+  } else {
+    document.getElementById("errorcantidad").innerHTML= "";
+  }
+
+}
+
+
+
 
 </script>
 

@@ -14,6 +14,8 @@
     </ol>
   </div>
 </div>
+
+
 <div class="container clear_both padding_fix">
   <div class="row">
     <div class="col-md-12">
@@ -31,7 +33,7 @@
                   <div class="btn-group" style="margin-right: 10px;">
                     <a class="btn btn-sm btn-success tooltips" href="articulos/create" style="margin-right: 10px;" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Registrar nuevo Artículo"> <i class="fa fa-plus"></i> Registrar </a>
 
-                  
+                    
 
                   </div>
 
@@ -47,7 +49,7 @@
             <table class="display table table-bordered table-striped" id="dynamic-table">
               <thead>
 
-                <tr  >
+                <tr>
                   <th>Nombre</th>
                   <th>Cantidad</th>
                   <th>Almacén</th>
@@ -135,7 +137,7 @@
              </tfoot>
            </table>
 
-        
+           
          </div><!--/table-responsive-->
        </div><!--/porlets-content-->
      </div><!--/block-web-->
