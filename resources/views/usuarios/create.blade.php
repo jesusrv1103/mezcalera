@@ -45,8 +45,8 @@
                  <input onchange="mayus(this);" type="text" class="form-control"  autofocus name="nombreCompleto" id="nombreCompleto" 
                  maxlength="50" required value="" placeholder="Ingrese el Nombre completo del Usuario">
                </div>
-             </div><!--/form-group-->
-             <div class="form-group">
+             </div>
+             <div><!--/form-group-->
 
 
               <div class="form-group">
