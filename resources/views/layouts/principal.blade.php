@@ -2,11 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Almacén SEZAC</title>
+  <title>Reserva de Don Chuy</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-
-
 
   {!!Html::style('css/font-awesome.css')!!}
   {!!Html::style('css/bootstrap.min.css')!!}
@@ -79,7 +77,8 @@ a {
       <div class="brand">
         <!--\\\\\\\ brand Start \\\\\\-->
         <!--div class="logo" style="display:block"><h2 style="margin-top: -5px;"><span class="theme_color">INSEZAC</span></h2></div-->
-        <div style="display:block"><img width="100%" style=" margin-top:-15px" src="{{asset('images/sezac.png')}}"></div>
+        <!--<div style="display:block"><img width="100%" style=" margin-top:-15px" src="{{asset('images/logo_edited.png')}}"></div>-->
+        <div style="display:block"><img width="100%" style=" margin-top:2px" src="{{asset('images/logo_edited.png')}}"></div>
 
         <div class="small_logo" style="display:none"><img src="{{asset('images/s-logo.png')}}" width="50" height="47" alt="s-logo" /> <img src="{{asset('images/s-logo.png')}}" width="122" height="20" alt="r-logo" /></div>
 
@@ -92,12 +91,11 @@ a {
           <h1>Control Almacén</h1>
         </div>
         <div class="top_right_bar">
-          <div style="margin-top: -20%">
+          <div style="margin-top: -33%;">
             <!--<span class="user_adminname">Usuario:{{Auth::user()}} </span>-->
-            <!--<span class="user_adminname">Route:{{Route::getCurrentRoute()->getName()}} </span>-->
-            <!--<span class="user_adminname"><a href="?c=Login&a=Index"><i class="fa fa-power-off"></i> Salir</span></a>-->
-            ESTE  WE simon
-            <span style="color: #808080"><a href="?c=Login&a=Index"><i class="fa fa-power-off">Salir</i></span>
+            <!--<span class="user_adminname">Route:{{Route::getCurrentRoute()->getName()}} </span>
+            <!<span class="user_adminname"><a href="?c=Login&a=Index"><i class="fa fa-power-off"></i> Salir</span></a>-->
+            <span class="user_adminname"><a href="?c=Login&a=Index"><i class="fa fa-power-off"></i>Salir</span></a>
           </div>
         </div>
       </div>
@@ -116,7 +114,7 @@ a {
             <ul class="opened" style="display:block">
               @else
               <li><a href="javascript:void(0);"><i class="fa fa-home"></i> Control de Almacen<span class="plus"><i class="fa fa-plus" ></i></span> </a>
-                <ul>
+                <ul id="este">
                   @endif
                   <li> <a href="{{url('almacenes')}}"> <span>&nbsp;</span> <i class="fa fa-circle"></i> 
                     @if(Route::getCurrentRoute()->getName()=="almacenes.index")

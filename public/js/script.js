@@ -66,4 +66,3 @@ Date.prototype.toString = function() {
   if( dia<=9 ) dia = "0"+dia; 
   return dia+"/"+mes+"/"+anyo;  
 }  
-
